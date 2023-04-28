@@ -23,7 +23,7 @@ public class Player {
     /**
      * Represents the name.
      */
-    private final String name;
+    private String name;
     /**
      * Represents the piece.
      */
@@ -46,6 +46,11 @@ public class Player {
      */
     private int properties;
 
+    /**
+     * This is the constructor of the Player class.
+     * @param playerName
+     * @param piece
+     */
     public Player(final String playerName, final int piece) {
         name       = playerName;
         whichPiece = piece;
@@ -60,6 +65,13 @@ public class Player {
      */
     public String getName() {
         return name;
+    }
+    /**
+     * Changing the name of the Player.
+     * @param n the new name of the Player
+     */
+    public void setName(final String n) {
+        name = n;
     }
     /**
      * Getting the piece  of the Player.
@@ -110,6 +122,41 @@ public class Player {
     public void addDoubles() {
         doubles++;
     }
+    /**
+     * geting the space of the Player.
+     */
+    public int getSpace() {
+        return space;
+    }
+    /**
+     * this is the method that moves the player from one position.
+     * @param rolled is the roled number
+     */
+    public void movePiece(final int rolled) {
+        space += rolled;
+        if (space > 15) {
+            space %= 16;
+            setMoney(200);
+        }
+    }
+    /**
+     * add a property.
+     * @param numProperty the integer of the property
+     */
+    public void addProperty() {
+        properties += 1;
+    }/**
+     * this is the method that sells the properties.
+     */
+    public void sellProperty() {
+        properties -= 1;
+    }
+    /**
+     * pay rent
+     */
+
+
+
 
 
 
