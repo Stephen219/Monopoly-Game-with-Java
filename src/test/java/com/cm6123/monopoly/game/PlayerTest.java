@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
-    // this is the object that will be used to get the player methods.
+    // this is the object that will be used to test the player methods.
     Player player =new Player("John",1);
 
     @Test
@@ -47,8 +47,8 @@ class PlayerTest {
         assertEquals(0, player.getDoubles());
     }
     @Test
-    // testing the move space
-    // it also tests whether
+    // testing the move space even after passing go
+    // it also tests whether the player gets the money after passing go.
     void testMoveSpaceEvenafterPassingGo(){
         // given the player is on space 0 that is home
         assertEquals(0, player.getSpace());
@@ -62,7 +62,7 @@ class PlayerTest {
         assertEquals(1000, player.getMoney());
         // given that the same player rolls a ten
         player.movePiece(10);
-        // then the player should be on space 1    that is 7 + 10 -16
+        // then the player should be on space 1    that is 7 + 10 -16 meaning they passed go.
         assertEquals(1, player.getSpace());
         // checking whether the player got the money since tyhy passed go.
         assertEquals(1200, player.getMoney());
@@ -88,4 +88,5 @@ class PlayerTest {
         // then the player should have 0 properties
         assertEquals(0, player.getProperties());
     }
+
 }

@@ -28,7 +28,7 @@ public class Player {
      * Represents the piece.
      */
 
-    private final int  whichPiece;
+    private int  whichPiece;
     /**
      * Represents the space.
      */
@@ -87,6 +87,7 @@ public class Player {
     public int getMoney() {
         return money;
     }
+
     /**
      * Getting the doubles  of the Player.
      * @return the doubles of the Player.
@@ -159,7 +160,7 @@ public class Player {
     public boolean buyProperty(final Property prop3) {
         if (money >= prop3.getPrice()) {
             money -= prop3.getPrice();
-            properties += 1;
+            addProperty();
             return true;
         }else {
             return false;

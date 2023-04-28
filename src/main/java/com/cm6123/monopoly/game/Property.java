@@ -16,7 +16,7 @@ public class Property {
     /**
      * Represents the name of the property.
      */
-    private final String name;
+    private String name;
     /**
      * Represents the owner of the property.
      */
@@ -24,28 +24,23 @@ public class Property {
     /**
      * Represents the colour group of the property.
      */
-    private final String colourGroup;
+    private String colourGroup;
     /**
      * Represents the cost of the property.
      */
-    private final int cost;
+    private  int cost;
     /**
      * Represents the rent of the property.
      */
-    private final int rent;
+    private  int rent;
     /**
      * Represents the space of the property.
      */
-    private final int space;
+    private int space;
     /**
      * Creates a standard Property object with blank or zero initial values.
-     * @param string the name of the Property
-     * @param i the owner of the Property
-     * @param j the type of the Property
-     * @param string2 the colour group of the Property
-     * @param k the cost of the Property
      */
-    public Property(final String string, final int i, final int j, final String string2, final int k) {
+    public Property() {
         name = "UNDEFINED";
         owner = 0;
         colourGroup = "NONE";
@@ -53,6 +48,7 @@ public class Property {
         rent = 0;
         space = 0;
     }
+
     /**
      * Creating a standard Property object with zero initial values, except for.
      * a specified space
@@ -72,6 +68,7 @@ public class Property {
         rent = propertyRent;
         space = propertySpace;
     }
+
     /**
      * Getting the name of the Property.
      * @return the name of the Property
@@ -121,7 +118,7 @@ public class Property {
     }
     /**
      * Returning all relevant values about a Property.
-     * @return the values
+     * @return the values of a property
      */
     public String toString() {
         return "PROPRERTY: <" + name + ">\n"
