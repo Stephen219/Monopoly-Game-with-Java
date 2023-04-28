@@ -114,19 +114,25 @@ public class Player {
      *   has rolled doubles to 0
      */
     public void resetDoubles() {
-        doubles = 0;
-    }
+        doubles = 0;}
     /**
      * Adds 1 to the number of times the Player has rolled doubles.
      */
     public void addDoubles() {
-        doubles++;
-    }
+        doubles++;}
     /**
      * geting the space of the Player.
+     * @return the space
      */
     public int getSpace() {
         return space;
+    }
+    /**
+     * Sets the current space of the Player.
+     * @param location the new space of the Player
+     */
+    public void setSpace(final int location) {
+        space = location;
     }
     /**
      * this is the method that moves the player from one position.
@@ -140,25 +146,30 @@ public class Player {
         }
     }
     /**
-     * add a property.
-     * @param numProperty the integer of the property
+     * add a property when they buy.
      */
     public void addProperty() {
         properties += 1;
     }/**
      * this is the method that sells the properties.
+     * and subtracts it from the current properties
+     * @param prop3 is the property
+     * @return true if the player has enough money to buy the property
+     */
+    public boolean buyProperty(final Property prop3) {
+        if (money >= prop3.getPrice()) {
+            money -= prop3.getPrice();
+            properties += 1;
+            return true;
+        }else {
+            return false;
+        }
+    }
+    /**
+     * this is the method that sells the properties.
+     * and subtracts it from the current properties
      */
     public void sellProperty() {
         properties -= 1;
     }
-    /**
-     * pay rent
-     */
-
-
-
-
-
-
-
 }
