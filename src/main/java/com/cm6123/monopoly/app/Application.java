@@ -1,5 +1,4 @@
 package com.cm6123.monopoly.app;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
