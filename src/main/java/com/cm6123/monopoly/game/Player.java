@@ -6,29 +6,29 @@ public class Player {
     /**
      * Represents wheelbarrow the piece.
      */
-    public static final int WHEELBARROW      = 0;
+    public static final int CAT = 0;
     /**
      * Represents battleship the piece.
      */
-    public static final int BATTLESHIP       = 1;
+    public static final int BATTLESHIP= 1;
     /**
      * Represents sack of money the piece.
      */
-    public static final int SACK_OF_MONEY    = 2;
+    public static final int DOG= 2;
     /**
      * Represents horse and rider the piece.
      */
-    public static final int HORSE_AND_RIDER  = 3;
+    public static final int CAR = 3;
 
     /**
      * Represents the name.
      */
-    private String name;
+    private final String name;
     /**
      * Represents the piece.
      */
 
-    private int whichPiece;
+    private final int  whichPiece;
     /**
      * Represents the space.
      */
@@ -61,5 +61,57 @@ public class Player {
     public String getName() {
         return name;
     }
+    /**
+     * Getting the piece  of the Player.
+     * @return the whichpiece of the Player.
+     */
+    public int getPiece() {
+        return whichPiece;
+    }
+    /**
+     * Getting the money  of the Player.
+     * @return the money garnrerd of the Player.
+     */
+    public int getMoney() {
+        return money;
+    }
+    /**
+     * Getting the doubles  of the Player.
+     * @return the doubles of the Player.
+     */
+    public int getDoubles() {
+        return doubles;
+    }
+    /**
+     * Can either add or subtract from a Player's amount.
+     *   of money (a positive number adds, a negative subtracts)
+     * @param value how much money to add or subtract
+     */
+    public void setMoney(final int value) {
+        money += value;
+    }
+    /**
+     * Returning the properties of a player.
+     * @return the properties
+     */
+    public int getProperties() {
+        return properties;
+    }
+    /**
+     * Resets the number of times a Player.
+     *   has rolled doubles to 0
+     */
+    public void resetDoubles() {
+        doubles = 0;
+    }
+    /**
+     * Adds 1 to the number of times the Player has rolled doubles.
+     */
+    public void addDoubles() {
+        doubles++;
+    }
+
+
+
 
 }
