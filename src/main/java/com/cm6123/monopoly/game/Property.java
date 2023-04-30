@@ -37,6 +37,7 @@ public class Property {
      * Represents the space of the property.
      */
     private int space;
+    private  int type;
     /**
      * Creates a standard Property object with blank or zero initial values.
      */
@@ -67,6 +68,7 @@ public class Property {
         cost = propertyColour;
         rent = propertyRent;
         space = propertySpace;
+        type= propertyType;
     }
 
     /**
@@ -140,6 +142,25 @@ public class Property {
      */
     public int getRent() {
         return rent;
+    }
+    /**
+     * Checking if the Property is owned.
+     * @return true if the Property is owned, false otherwise
+     */
+
+    public boolean isOwned() {
+        if (owner == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    /**
+     * Getting the type of the Property.
+     * @return the type
+     */
+    public int getType(){
+        return type;
     }
 }
 

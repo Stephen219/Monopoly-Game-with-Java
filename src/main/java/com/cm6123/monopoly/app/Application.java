@@ -2,14 +2,18 @@ package com.cm6123.monopoly.app;
 import com.cm6123.monopoly.dice.Dice;
 import com.cm6123.monopoly.game.Player;
 import com.cm6123.monopoly.game.Property;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.cm6123.monopoly.app.TakeTurns.takeTurn;
 import static com.cm6123.monopoly.game.Board.createProperties;
 import static java.lang.System.in;
+
 
 
 public final class Application {
@@ -20,6 +24,12 @@ public final class Application {
 
 
     private Application() {}
+    /**
+     * Sets the names of the players.
+     *
+     * @param players the players to set the names for.
+     * @param in      the scanner to use to get the names from the user.
+     */
     public static void setPlayerNames(final ArrayList<Player> players, final Scanner in) {
         System.out.println(players.size() + " players");
 
@@ -29,53 +39,6 @@ public final class Application {
             p.setName(in.nextLine());
         }
     }
-    public static void takeTurn(Player player, Dice dice){
-        // Roll the die
-        int roll1 = dice.roll();
-        int roll2 = dice.roll();
-        int rollTotal = roll1 + roll2;
-        // Print the roll result
-        System.out.println(player.getName() + " rolls " + roll1 + " and " + roll2 + " for a total of " + rollTotal);
-        // Move the player's piece
-        player.movePiece(rollTotal);
-        int curr= player.getSpace();
-        int money= player.getMoney();
-        System.out.println(player.getName() + " is now on " + curr);
-        System.out.println(player.getName() + " has $" + money);
-        // Check if the player passed Go
-        if (player.getSpace() >= 16) {
-            System.out.println(player.getName() + " passed 'Home' and received $200");
-            player.setMoney(player.getMoney() + 200);
-            player.setSpace(player.getSpace() - 16); // Move the player back to the beginning
-        }
-        // Check if the player passed the tax office
-        if (player.getSpace() == 10) {
-            System.out.println(player.getName() + " landed on the tax office and will pay 10% of their money");
-            int tax = (int) Math.round(0.1 * player.getMoney());
-            player.setMoney(player.getMoney() - tax);
-            System.out.println(player.getName() + " paid $" + tax + " in taxes and now has $" + player.getMoney());
-        }
-
-        // Check if the player rolled doubles
-        if (roll1 == roll2) {
-            player.addDoubles();
-
-            if (player.getDoubles() == 3) {
-                // Player has rolled doubles three times in a row
-                System.out.println(player.getName() + " rolled doubles three times in a row and goes to the nearest property");
-                player.setSpace(1); // Move the player to the nearest property
-                player.resetDoubles();
-            } else {
-                // Player rolls again
-                System.out.println(player.getName() + " rolled doubles and gets to roll again");
-                takeTurn(player, dice); // Recursively call takeTurn() method to roll again
-            }
-        } else {
-            player.resetDoubles();
-        }
-    }
-
-
     /**
      * main entry point.  If args provided, result is displayed and program exists. Otherwise, user is prompted for
      * input.
@@ -107,7 +70,7 @@ public final class Application {
 
         do {
             scanner.nextLine();
-            takeTurn(players.get(counter), dice);
+            takeTurn(players.get(counter), dice, properties, players, scanner);
             scanner.nextLine();
             counter++;
             if (counter > players.size() - 1) {
@@ -116,6 +79,8 @@ public final class Application {
         } while (!gameOver);
 
         scanner.close();
+
+
 
         logger.info("Application closing");
     }

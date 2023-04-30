@@ -29,6 +29,15 @@ class PropertyTest {
         property.setOwner(1);
         Assertions.assertEquals(1, property.getOwner());
     }
+    @Test
+    void testIsOwned(){
+        Property property = new Property("Park Place", 0, 0, "Blue", 350, 35, 37);
+
+        assertEquals(false, property.isOwned());
+        property.setOwner(1);
+        assertEquals(true, property.isOwned());
+    }
+
 
 
 }

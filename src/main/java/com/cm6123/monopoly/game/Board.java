@@ -27,22 +27,23 @@ public class Board extends Property{
      * @param properties an ArrayList of Property objects to which the properties will be added to
      */
     public static void createProperties(final ArrayList<Property> properties) {
-        Property home = new Property("Home", 0, 0, "Green", 0, 0, 1);
-        Property road = new Property("Road", 0, 0, "Grey", 0, 0, 0);
-        Property road2 = new Property("Road", 0, 0, "Grey", 0, 0, 3);
-        Property oldKentRoad = new Property("Old Kent Road", 0, 0, "Orange", 0, 0, 4);
-        Property pallMall = new Property("Pall Mall", 0, 0, "Orange", 0, 0, 5);
-        Property road3 = new Property("Road", 0, 0, "Grey", 0, 0, 6);
-        Property paddington = new Property("Paddington", 0, 0, "Grey", 0, 0, 7);
-        Property road4 = new Property("Road", 0, 0, "Grey", 0, 0, 8);
-        Property theStrand = new Property("The Strand", 0, 0, "Grey", 0, 0, 9);
-        Property road5 = new Property("Road", 0, 0, "Grey", 0, 0, 10);
-        Property taxOffice = new Property("Tax Office", 0, 0, "Grey", 0, 0, 11);
-        Property waterloo = new Property("Waterloo", 0, 0, "Grey", 0, 0, 12);
-        Property leicesterSquare = new Property("Leicester Square", 0, 0, "Grey", 0, 0, 13);
-        Property road6 = new Property("Road", 0, 0, "Grey", 0, 0, 14);
-        Property packLane = new Property("Park Lane", 0, 0, "Grey", 0, 0, 15);
-        Property road7 = new Property("Road", 0, 0, "Grey", 0, 0, 16);
+        Property home = new Property("Home", 0, -1, "Green", 0, 0, 0);
+        Property road = new Property("Road", 0, 2, "Grey", 500, 20, 1);
+        Property road2 = new Property("Road1", 0, 2, "Grey", 540, 60, 2);
+        Property oldKentRoad = new Property("Old Kent Road", 0, 0, "Orange", 80, 20, 3);
+        Property pallMall = new Property("Pall Mall", 0, 0, "Orange", 550, 70, 4);
+        Property road3 = new Property("Road2", 0, 2, "Grey", 0, 0, 5);
+        Property paddington = new Property("Paddington", 0, 0, "Grey", 770, 770, 6);
+        Property road4 = new Property("Road3", 0, 2, "Grey", 0, 0, 7);
+        Property theStrand = new Property("The Strand", 0, 0, "Grey", 660, 770, 8);
+        Property road5 = new Property("Road4", 0, 2, "Grey", 0, 0, 9);
+        Property taxOffice = new Property("Tax Office", 0, 3, "Grey", 0, 0, 10);
+        Property waterloo = new Property("Waterloo", 0, 0, "Grey", 0, 0, 11);
+        Property leicesterSquare = new Property("Leicester Square", 0, 0, "Grey", 0, 0, 12);
+        Property road6 = new Property("Road5", 0, 2, "Grey", 0, 0, 13);
+        Property PackLane = new Property("Park Lane", 0, 0, "Grey", 0, 0, 14);
+        Property road7 = new Property("Road6", 0, 2, "Grey", 0, 0, 15);
+        Property mayfair = new Property("Mayfair", 0, 0, "Grey", 0, 0, 16);
         properties.add(home);
         properties.add(road);
         properties.add(road2);
@@ -57,7 +58,7 @@ public class Board extends Property{
         properties.add(waterloo);
         properties.add(leicesterSquare);
         properties.add(road6);
-        properties.add(packLane);
+        properties.add(PackLane);
         properties.add(road7);
     }
 
