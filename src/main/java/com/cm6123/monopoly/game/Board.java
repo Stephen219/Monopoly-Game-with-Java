@@ -18,9 +18,9 @@ public class Board extends Property{
      * @param propertySpace is the space where the Property is located
      */
     public Board(final String propertyname, final int proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyColour, final int propertyRent, final int propertySpace) {
-        super(propertyname, proprtyOwner, propertyType, propertyColourGroup, propertyColour, propertyRent, propertySpace);
+        super(propertyname, proprtyOwner, propertyType, propertyColourGroup, propertyType, propertyRent, propertySpace);
     }
-    /** Assigning initial values to all of the Property.
+    /** Assigning initial values to all the Property.
      *   objects on a Monopoly board and then adds them to an
      *   ArrayList defined and accessible in the main
      *   method
@@ -28,13 +28,13 @@ public class Board extends Property{
      */
     public static void createProperties(final ArrayList<Property> properties) {
         Property home = new Property("Home", 0, -1, "Green", 0, 0, 0);
-        Property road = new Property("Road", 0, 2, "Grey", 500, 20, 1);
-        Property road2 = new Property("Road1", 0, 2, "Grey", 540, 60, 2);
+        Property road = new Property("Road", 0, 2, "Grey", 0, 20, 1);
+        Property road2 = new Property("Road1", 0, 2, "Grey", 0, 60, 2);
         Property oldKentRoad = new Property("Old Kent Road", 0, 0, "Orange", 80, 20, 3);
         Property pallMall = new Property("Pall Mall", 0, 0, "Orange", 550, 70, 4);
         Property road3 = new Property("Road2", 0, 2, "Grey", 0, 0, 5);
-        Property paddington = new Property("Paddington", 0, 0, "Grey", 770, 770, 6);
-        Property road4 = new Property("Road3", 0, 2, "Grey", 0, 0, 7);
+        Property paddington = new Property("Paddington", 0, 0, "Grey", 170, 70, 6);
+        Property mayfair = new Property("Mayfair", 0, 0, "Grey", 0, 0, 7);
         Property theStrand = new Property("The Strand", 0, 0, "Grey", 660, 770, 8);
         Property road5 = new Property("Road4", 0, 2, "Grey", 0, 0, 9);
         Property taxOffice = new Property("Tax Office", 0, 3, "Grey", 0, 0, 10);
@@ -43,7 +43,6 @@ public class Board extends Property{
         Property road6 = new Property("Road5", 0, 2, "Grey", 0, 0, 13);
         Property PackLane = new Property("Park Lane", 0, 0, "Grey", 0, 0, 14);
         Property road7 = new Property("Road6", 0, 2, "Grey", 0, 0, 15);
-        Property mayfair = new Property("Mayfair", 0, 0, "Grey", 0, 0, 16);
         properties.add(home);
         properties.add(road);
         properties.add(road2);
@@ -51,7 +50,7 @@ public class Board extends Property{
         properties.add(pallMall);
         properties.add(road3);
         properties.add(paddington);
-        properties.add(road4);
+        properties.add(mayfair);
         properties.add(theStrand);
         properties.add(road5);
         properties.add(taxOffice);

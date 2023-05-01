@@ -52,7 +52,7 @@ public final class Application {
 
         System.out.println("Hello. Welcome to Monopoly.");
         ArrayList<Player> players = new ArrayList<Player>();
-        Player player1 = new Player("Player 1", Player.CAR);players.add(player1);
+        Player player1 = new Player("Player 1", Player.DOG);players.add(player1);
         Player player2 = new Player("Player 2", Player.BATTLESHIP);players.add(player2);
         Player player3 = new Player("Player 3", Player.CAR);players.add(player3);
 

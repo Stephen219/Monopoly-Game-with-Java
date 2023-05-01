@@ -6,6 +6,7 @@ public class Property {
     /**
      * Represents the types of properties.
      * buyable properties are represented by 0
+     * this is the home  property
      */
     public static final int OTHER = -1;
     /**
@@ -14,9 +15,21 @@ public class Property {
      */
     public static final int PROPERTY = 0;
     /**
+     * represents the station properties.
+     */
+    public static final int STATION = 1;
+    /**
+     * represents the road properties.
+     */
+    public static final int ROAD = 2;
+    /**
+     * represents the tax office properties.
+     */
+    public static final int TAXOFFICE = 3;
+    /**
      * Represents the name of the property.
      */
-    private String name;
+    private final String name;
     /**
      * Represents the owner of the property.
      */
@@ -24,19 +37,22 @@ public class Property {
     /**
      * Represents the colour group of the property.
      */
-    private String colourGroup;
+    private final String colourGroup;
     /**
      * Represents the cost of the property.
      */
-    private  int cost;
+    private final int cost;
     /**
      * Represents the rent of the property.
      */
-    private  int rent;
+    private final int rent;
     /**
      * Represents the space of the property.
      */
-    private int space;
+    private final int space;
+    /**
+     * Represents the type of the property.
+     */
     private  int type;
     /**
      * Creates a standard Property object with blank or zero initial values.
@@ -51,21 +67,20 @@ public class Property {
     }
 
     /**
-     * Creating a standard Property object with zero initial values, except for.
-     * a specified space
+     * Creating constructor for the Property class.
      * @param propertyname is the name of the Property
      * @param proprtyOwner is the owner of the Property
      * @param propertyType is the value of a parameter that is not currently being used
      * @param propertyColourGroup is the colour group of the Property
-     * @param propertyColour is the cost of the Property
+     * @param propertyCost is the cost of the Property
      * @param propertyRent is the rent of the Property
      * @param propertySpace is the space where the Property is located
      */
-    public Property(final String propertyname, final int proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyColour, final int propertyRent, final int propertySpace) {
+    public Property(final String propertyname, final int proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
         name = propertyname;
         owner = proprtyOwner;
         colourGroup = propertyColourGroup;
-        cost = propertyColour;
+        cost = propertyCost;
         rent = propertyRent;
         space = propertySpace;
         type= propertyType;

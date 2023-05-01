@@ -1,6 +1,9 @@
 package com.cm6123.monopoly.game;
+
+import java.util.ArrayList;
+
 /**
- * this is a player class with all the methods and attributes needed to play the game.
+ * this is a player class with all the methods and attribute for the player.
  */
 public class Player {
     /**
@@ -19,6 +22,10 @@ public class Player {
      * Represents horse and rider the piece.
      */
     public static final int CAR = 3;
+    /**
+     *arraylist of properties owned by the player in the game.
+     */
+    private final ArrayList<Property> playerProperties;
 
     /**
      * Represents the name.
@@ -28,7 +35,7 @@ public class Player {
      * Represents the piece.
      */
 
-    private int  whichPiece;
+    private final int  whichPiece;
     /**
      * Represents the space.
      */
@@ -58,6 +65,22 @@ public class Player {
         money      = 1000;
         doubles    = 0;
         properties = 0;
+        this.playerProperties= new ArrayList<Property>();
+    }
+    /**
+     * this is the method that adds a property to the player.
+     * @param property is the property to be added
+     */
+    public void addProperty(Property property) {
+        playerProperties.add(property);
+    }
+
+    /**
+     * this is the method that returns the properties owned by the player.
+     * @return the properties owned by the player
+     */
+    public ArrayList<Property> getPropertiesArray() {
+        return playerProperties;
     }
     /**
      * Getting the mane of the Player.
@@ -149,7 +172,7 @@ public class Player {
     /**
      * add a property when they buy.
      */
-    public void addProperty() {
+     void addProperty() {
         properties += 1;
     }/**
      * this is the method that sells the properties.
