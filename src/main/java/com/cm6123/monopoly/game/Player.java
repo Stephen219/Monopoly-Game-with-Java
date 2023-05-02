@@ -52,11 +52,23 @@ public class Player {
      * Represents the properties.
      */
     private int properties;
-
     /**
-     * This is the constructor of the Player class.
-     * @param playerName
-     * @param piece
+     * creating a constructor for a player with no any value.
+     * this is used to create an unknown player.
+     */
+    public Player() {
+        name       = new String("UNKNOWN");
+        whichPiece = 0;
+        space      = 0;
+        money      = 1000;
+        doubles    = 0;
+        properties = 0;
+        this.playerProperties= new ArrayList<Property>();
+    }
+    /**
+     * This is the constructor of the Player class where the name and the piece are passed.
+     * @param playerName is the name of the player
+     * @param piece is the piece of the player
      */
     public Player(final String playerName, final int piece) {
         name       = playerName;
@@ -71,7 +83,7 @@ public class Player {
      * this is the method that adds a property to the player.
      * @param property is the property to be added
      */
-    public void addProperty(Property property) {
+    public void addProperty(final Property property) {
         playerProperties.add(property);
     }
 

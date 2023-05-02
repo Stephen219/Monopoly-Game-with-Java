@@ -23,6 +23,4 @@ public class BoardTest {
         assertEquals("Grey", properties.get(15).getColourGroup());
     }
 
-
-
 }

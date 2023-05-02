@@ -18,7 +18,7 @@ public class RemovePlayer {
      * @param properties the list of properties in the game.
      * @param banker the banker of the game.
      */
-    public static void removePlayer(final Player player, final ArrayList<Player> players,final ArrayList<Property> properties, final Banker banker) {
+    public static Player removePlayer(final Player player, final ArrayList<Player> players,final ArrayList<Property> properties, final Banker banker) {
         if (player.getMoney() < 0 && player.getPropertiesArray().isEmpty()) {
             System.out.println(player.getName() + " is bankrupt and out of the game.");
             players.remove(player);
@@ -45,6 +45,12 @@ public class RemovePlayer {
                 System.out.println(player.getName() + " is bankrupt and out of the game.");
                 players.remove(player);
             }
+        }
+        if (players.size() == 1) {
+            // return the winner
+            return players.get(0);
+        } else {
+            return null;
         }
     }
 

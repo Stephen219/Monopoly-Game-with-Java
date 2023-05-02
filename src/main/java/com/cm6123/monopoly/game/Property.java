@@ -55,7 +55,8 @@ public class Property {
      */
     private  int type;
     /**
-     * Creates a standard Property object with blank or zero initial values.
+     * Creating a default constructor for the Property class, which sets default values for name, owner, colourGroup, cost,
+     * rent, and space. This constructor is used when a Property object is created without any parameters.
      */
     public Property() {
         name = "UNDEFINED";

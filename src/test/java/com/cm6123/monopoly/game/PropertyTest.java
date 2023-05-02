@@ -33,6 +33,18 @@ class PropertyTest {
     void testIsOwned(){
         assertEquals(false, property.isOwned());
         property.setOwner(1);
-        assertEquals(true, property.isOwned());
+        assertTrue(property.isOwned());
+    }
+    @Test
+    public void testPropertyDefaultConstructor() {
+        //given i create a property with no parameters,
+        Property property = new Property();
+        //then i expect the following default values to be set.
+        assertEquals("UNDEFINED", property.getName());
+        assertEquals(0, property.getOwner());
+        assertEquals("NONE", property.getColourGroup());
+        assertEquals(0, property.getCost());
+        assertEquals(0, property.getRent());
+        assertEquals(0, property.gettingSpace());
     }
 }

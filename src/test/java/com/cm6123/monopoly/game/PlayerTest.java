@@ -121,5 +121,34 @@ class PlayerTest {
         assertTrue(player.getPropertiesArray().contains(property));
         assertTrue(player.getPropertiesArray().contains(property2));
     }
+    //testing the default constructor with no parameters
+    @Test
+    public void testDefaultConstructor() {
+        // given a player with no name and piece is initialised
+        Player player = new Player();
+        // then the player should have the following attributes
+        assertEquals("UNKNOWN", player.getName());
+        assertEquals(0, player.getPiece());
+        assertEquals(0, player.getSpace());
+        assertEquals(1000, player.getMoney());
+        assertEquals(0, player.getDoubles());
+        assertEquals(0, player.getProperties());
+        assertTrue(player.getPropertiesArray().isEmpty());
+    }
+    // testing the parameterized constructor with the name and piece
+
+    @Test
+    public void testParameterizedConstructorWithTheNameAndPiece() {
+        // given a player with the name and piece is initialised
+        Player player = new Player("John", 1);
+        // then the player should have the following attributes
+        assertEquals("John", player.getName());
+        assertEquals(1, player.getPiece());
+        assertEquals(0, player.getSpace());
+        assertEquals(1000, player.getMoney());
+        assertEquals(0, player.getDoubles());
+        assertEquals(0, player.getProperties());
+        assertTrue(player.getPropertiesArray().isEmpty());
+    }
 
 }
