@@ -16,17 +16,15 @@ import static java.lang.System.in;
 
 
 
+
 public final class Application {
     /**
      * Create a logger for the class.
      */
     private static Logger logger = LoggerFactory.getLogger(Application.class);
-
-
     private Application() {}
     /**
      * Sets the names of the players.
-     *
      * @param players the players to set the names for.
      * @param in      the scanner to use to get the names from the user.
      */

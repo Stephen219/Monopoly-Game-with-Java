@@ -8,6 +8,9 @@ import com.cm6123.monopoly.game.Property;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static com.cm6123.monopoly.app.RemovePlayer.removePlayer;
+
 public final class TakeTurns {
     /**
      * This is the constructor of the class.
@@ -20,7 +23,6 @@ public final class TakeTurns {
      * This is the banker of the game.
      */
     private static Banker banker = new Banker();
-
     /**
      * This is the main method of the game.
      * @param player the player
@@ -35,7 +37,6 @@ public final class TakeTurns {
         int roll2 = dice.roll();
         int rollTotal = roll1 + roll2;
         int spaceBefore = player.getSpace();
-
 
         if (spaceBefore + rollTotal > 16) {
             //bankk give money to player if he pass go
@@ -85,13 +86,13 @@ public final class TakeTurns {
                         //aad the property to the player's arraylist
                         player.addProperty(property);
                         //print the properties owned by the player
-                        ArrayList<Property> AProperties = player.getPropertiesArray();
+                        ArrayList<Property> aProperties = player.getPropertiesArray();
                         System.out.println(player.getName() + " owns the following properties:");
-                        if (AProperties.isEmpty()) {
+                        if (aProperties.isEmpty()) {
                             System.out.println("None");
                         } else {
-                            for (Property AProperty : AProperties) {
-                                System.out.println(AProperty.getName() + " - $" + AProperty.getPrice());
+                            for (Property aProperty : aProperties) {
+                                System.out.println(aProperty.getName() + " - $" + aProperty.getPrice());
                             }
                         }
 
@@ -120,7 +121,6 @@ public final class TakeTurns {
                     throw new InputMismatchException("Invalid input. Please enter Y or N.");
                 }
                 // TO DO: 30/04/2023  player can sell the property.
-
             }else {
                 // Property is owned by someone else, player needs to pay rent
                 int rent = property.getRent();
@@ -179,5 +179,6 @@ public final class TakeTurns {
         } else {
             player.resetDoubles();
         }
+        removePlayer(player, players, properties, banker);
     }
 }
