@@ -4,14 +4,11 @@ properties locations on a monopolyy board. */
 
 public class Property {
     /**
-     * Represents the types of properties.
-     * buyable properties are represented by 0
-     * this is the home  property
+     * Repreesents the home property type.  can
      */
     public static final int OTHER = -1;
     /**
-     * Represents the types of properties.
-     * non-uyable properties are represented by 0
+     * Represents the types of properties that can be bought.
      */
     public static final int PROPERTY = 0;
     /**
@@ -23,7 +20,7 @@ public class Property {
      */
     public static final int ROAD = 2;
     /**
-     * represents the tax office properties.
+     * represents the tax office property.
      */
     public static final int TAXOFFICE = 3;
     /**
@@ -47,11 +44,12 @@ public class Property {
      */
     private final int rent;
     /**
-     * Represents the space of the property.
+     * Represents the space of the property on the board.
      */
     private final int space;
     /**
      * Represents the type of the property.
+     * either home of type -1, buyable of type 0, station of type 1, road of type 2, or tax office of type 3.
      */
     private  int type;
     /**
@@ -68,7 +66,8 @@ public class Property {
     }
 
     /**
-     * Creating constructor for the Property class.
+     * Creating a constructor for the Property class, which sets values for name, owner, colourGroup, cost, rent, and space.
+     * This constructor is used when a Property object is created with parameters.
      * @param propertyname is the name of the Property
      * @param proprtyOwner is the owner of the Property
      * @param propertyType is the value of a parameter that is not currently being used

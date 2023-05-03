@@ -146,8 +146,6 @@ public final class TakeTurns {
             System.out.println("the banker has £" + banker.getMoney());
             System.out.println(player.getName() + " paid £" + ticketPrice + " and now has £" + player.getMoney());
         }
-
-
         // Check if the player rolled doubles
         if (roll1 == roll2) {
             player.addDoubles();
@@ -169,13 +167,18 @@ public final class TakeTurns {
         removePlayer(player, players, properties, banker);
     }catch (Exception e) {
         if (e instanceof InputMismatchException) {
-            System.out.println("Invalid input. Please enter a number.");
+            System.out.println("Invalid input!!!!!!!!!!!. Please enter a valid input!!.");
         } else {
-            System.out.println("An error occurred.");
+            System.out.println("mmmmmh!!! .An error occurred.Please press enter to continue......");
         }
         e.printStackTrace();
     }
-    }
+        if (players.size() == 1) {
+            // return the winner
+            Player winner = players.get(0);
+            System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() +"and the following properties: " + winner.getPropertiesArray());
+            System.out.println("The game is over.");}
+        }
 
 
 }

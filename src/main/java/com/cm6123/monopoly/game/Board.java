@@ -1,6 +1,7 @@
 package com.cm6123.monopoly.game;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Board extends Property{
     /** An ArrayList of Property objects to which the properties will be added to.
@@ -27,38 +28,25 @@ public class Board extends Property{
      * @param properties an ArrayList of Property objects to which the properties will be added to
      */
     public static void createProperties(final ArrayList<Property> properties) {
-        Property home = new Property("Home", 0, -1, "Green", 0, 0, 0);
-        Property road = new Property("Road", 0, 2, "Grey", 0, 20, 1);
-        Property road2 = new Property("Road1", 0, 2, "Grey", 0, 960, 2);
-        Property oldKentRoad = new Property("Old Kent Road", 0, 0, "Orange", 80, 920, 3);
-        Property pallMall = new Property("Pall Mall", 0, 0, "Orange", 50, 970, 4);
-        Property road3 = new Property("Road2", 0, 2, "Grey", 0, 0, 5);
-        Property paddington = new Property("Paddington", 0, 0, "Grey", 170, 870, 6);
-        Property mayfair = new Property("Mayfair", 0, 0, "Grey", 900, 900, 7);
-        Property theStrand = new Property("The Strand", 0, 0, "Grey", 660, 770, 8);
-        Property road5 = new Property("Road4", 0, 2, "Grey", 0, 880, 9);
-        Property taxOffice = new Property("Tax Office", 0, 3, "Grey", 0, 0, 10);
-        Property waterloo = new Property("Waterloo", 0, 0, "Grey", 900, 800, 11);
-        Property leicesterSquare = new Property("Leicester Square", 0, 0, "Grey", 0, 769, 12);
-        Property road6 = new Property("Road5", 0, 2, "Grey", 0, 0, 13);
-        Property packLane = new Property("Park Lane", 0, 0, "Grey", 900, 820, 14);
-        Property road7 = new Property("Road6", 0, 2, "Grey", 0, 0, 15);
-        properties.add(home);
-        properties.add(road);
-        properties.add(road2);
-        properties.add(oldKentRoad);
-        properties.add(pallMall);
-        properties.add(road3);
-        properties.add(paddington);
-        properties.add(mayfair);
-        properties.add(theStrand);
-        properties.add(road5);
-        properties.add(taxOffice);
-        properties.add(waterloo);
-        properties.add(leicesterSquare);
-        properties.add(road6);
-        properties.add(packLane);
-        properties.add(road7);
+        properties.addAll(List.of(
+                new Property("Home", 0, -1, "Green", 0, 0, 0),
+                new Property("Road", 0, 2, "Grey", 0, 20, 1),
+                new Property("Road1", 0, 2, "Grey", 0, 960, 2),
+                new Property("Old Kent Road", 0, 0, "Orange", 80, 920, 3),
+                new Property("Pall Mall", 0, 0, "Orange", 50, 970, 4),
+                new Property("Road2", 0, 2, "Grey", 0, 0, 5),
+                new Property("Paddington", 0, 0, "Grey", 170, 870, 6),
+                new Property("Mayfair", 0, 0, "Grey", 900, 900, 7),
+                new Property("The Strand", 0, 0, "Grey", 660, 770, 8),
+                new Property("Road4", 0, 2, "Grey", 0, 880, 9),
+                new Property("Tax Office", 0, 3, "Grey", 0, 0, 10),
+                new Property("Waterloo", 0, 0, "Grey", 900, 800, 11),
+                new Property("Leicester Square", 0, 0, "Grey", 0, 769, 12),
+                new Property("Road5", 0, 2, "Grey", 0, 0, 13),
+                new Property("Park Lane", 0, 0, "Grey", 900, 820, 14),
+                new Property("Road6", 0, 2, "Grey", 0, 0, 15)
+                ));
     }
+
 
 }

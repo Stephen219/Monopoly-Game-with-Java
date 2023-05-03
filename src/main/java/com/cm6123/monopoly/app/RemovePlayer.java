@@ -47,6 +47,8 @@ import java.util.ArrayList;
         }
         if (players.size() == 1) {
             // return the winner
+            Player winner = players.get(0);
+            System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() +"and the following properties: " + winner.getPropertiesArray());
             return players.get(0);
         } else {
             return null;
