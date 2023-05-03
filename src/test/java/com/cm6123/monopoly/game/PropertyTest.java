@@ -30,6 +30,10 @@ class PropertyTest {
         Assertions.assertEquals(1, property.getOwner());
     }
     @Test
+    void testgetType(){
+        assertEquals(0, property.getType());
+    }
+    @Test
     void testIsOwned(){
         assertEquals(false, property.isOwned());
         property.setOwner(1);

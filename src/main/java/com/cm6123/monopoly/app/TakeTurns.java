@@ -33,7 +33,8 @@ public final class TakeTurns {
      */
     public static void takeTurn(final Player player, final Dice dice, final ArrayList<Property> properties,final ArrayList<Player> players,final  Scanner scan) throws InputMismatchException {
         // Roll the die
-        int roll1 = dice.roll();
+        try {
+            int roll1 = dice.roll();
         int roll2 = dice.roll();
         int rollTotal = roll1 + roll2;
         int spaceBefore = player.getSpace();
@@ -43,29 +44,20 @@ public final class TakeTurns {
             banker.setAmount(-200);
             System.out.println("You have passed go and collected £200");
         }
-
-
         // Print the roll result
         System.out.println(player.getName() + " rolls " + roll1 + " and " + roll2 + " for a total of " + rollTotal);
         // Move the player's piece
         player.movePiece(rollTotal);
-
         int curr = player.getSpace();
         System.out.println(properties.get(curr));
         Property property = properties.get(player.getSpace());
-
         int money = player.getMoney();
         System.out.println(player.getName() + " is now on space " + curr);
         System.out.println(player.getName() + " has £" + money);
-
-
-        // Check if the player landed on a tax office
-
+        // Check if the player landed on a road
         if (property.getType() == 2) {
             System.out.println("You have landed on a road." +property.getName()+ " No action is required.");
         }
-
-
         // Check if the player landed on a buyable and sellable property
         if (property.getType() == 0) {
             if (!property.isOwned()) {
@@ -75,12 +67,9 @@ public final class TakeTurns {
                 String answer = scan.next();
                 if (answer.equalsIgnoreCase("Y")) {
                     if (player.buyProperty(property)) {
-
-
                         //player.setMoney(money - property.getPrice());
                         banker.setAmount(property.getPrice());
                         System.out.println("bank has £" + banker.getMoney());
-
                         int playerIndex = players.indexOf(player);
                         property.setOwner(playerIndex);
                         //aad the property to the player's arraylist
@@ -95,8 +84,6 @@ public final class TakeTurns {
                                 System.out.println(aProperty.getName() + " - $" + aProperty.getPrice());
                             }
                         }
-
-
                         System.out.println(player.getName() + " has purchased " + property.getName() + " for £" + property.getPrice() + "and now has £" + player.getMoney() + " left.");
                         System.out.println("they own "+player.getProperties()+" properties");
                     } else{
@@ -180,5 +167,15 @@ public final class TakeTurns {
             player.resetDoubles();
         }
         removePlayer(player, players, properties, banker);
+    }catch (Exception e) {
+        if (e instanceof InputMismatchException) {
+            System.out.println("Invalid input. Please enter a number.");
+        } else {
+            System.out.println("An error occurred.");
+        }
+        e.printStackTrace();
     }
+    }
+
+
 }

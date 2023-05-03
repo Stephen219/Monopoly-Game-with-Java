@@ -6,17 +6,16 @@ import com.cm6123.monopoly.game.Property;
 
 import java.util.ArrayList;
 
-public class RemovePlayer {
-    /**
-     * default constructor.
-     */
-    public RemovePlayer() {}
+ public final class RemovePlayer {
+     private RemovePlayer() {
+     }
     /**
      * This method is used to remove a player from the game if they are bankrupt.
      * @param player the player to be removed.
      * @param players the list of players in the game.
      * @param properties the list of properties in the game.
      * @param banker the banker of the game.
+     * @return the winner of the game when the player array list has only one player.
      */
     public static Player removePlayer(final Player player, final ArrayList<Player> players,final ArrayList<Property> properties, final Banker banker) {
         if (player.getMoney() < 0 && player.getPropertiesArray().isEmpty()) {

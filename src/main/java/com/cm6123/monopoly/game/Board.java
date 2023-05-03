@@ -41,7 +41,7 @@ public class Board extends Property{
         Property waterloo = new Property("Waterloo", 0, 0, "Grey", 900, 800, 11);
         Property leicesterSquare = new Property("Leicester Square", 0, 0, "Grey", 0, 769, 12);
         Property road6 = new Property("Road5", 0, 2, "Grey", 0, 0, 13);
-        Property PackLane = new Property("Park Lane", 0, 0, "Grey", 900, 820, 14);
+        Property packLane = new Property("Park Lane", 0, 0, "Grey", 900, 820, 14);
         Property road7 = new Property("Road6", 0, 2, "Grey", 0, 0, 15);
         properties.add(home);
         properties.add(road);
@@ -57,7 +57,7 @@ public class Board extends Property{
         properties.add(waterloo);
         properties.add(leicesterSquare);
         properties.add(road6);
-        properties.add(PackLane);
+        properties.add(packLane);
         properties.add(road7);
     }
 
