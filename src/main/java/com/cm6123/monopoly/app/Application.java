@@ -26,7 +26,7 @@ public final class Application {
     /**
      * Sets the names of the players.
      * @param players the players to set the names for.
-     * @param in      the scanner to use to get the names from the user.
+     * @param in the scanner to use to get the INPUTs from the user.
      */
     public static void setPlayerNames(final ArrayList<Player> players, final Scanner in) {
         System.out.println(players.size() + " players");
@@ -49,19 +49,18 @@ public final class Application {
         logger.info("Application Started with args:{}", String.join(",", args));
 
         System.out.println("Hello. Welcome to Monopoly.");
-        ArrayList<Player> players = new ArrayList<Player>();
+        ArrayList<Player> players = new ArrayList<Player>();//creates an arraylist of players
         Player player1 = new Player("Player 1", Player.DOG);players.add(player1);
         Player player2 = new Player("Player 2", Player.BATTLESHIP);players.add(player2);
         Player player3 = new Player("Player 3", Player.CAR);players.add(player3);
-
+        Player player4 = new Player("Player 4", Player.HAT);players.add(player4);
+        //i can add more players if needed
         setPlayerNames(players, new Scanner(in));
-        ArrayList<Property> properties = new ArrayList<Property>();
-        createProperties(properties);
+        ArrayList<Property> properties = new ArrayList<Property>();//creates an arraylist of properties
+        createProperties(properties);//creates the board with the properties. the class is in the board class.
 
-        boolean gameOver = false;
+        boolean gameOver = false;//sets the game to not be over
         int counter = 0;
-
-
 
         Scanner scanner = new Scanner(System.in);
         Dice dice = new Dice(6);

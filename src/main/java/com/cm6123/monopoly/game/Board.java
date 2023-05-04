@@ -14,11 +14,11 @@ public class Board extends Property{
      * @param proprtyOwner is the owner of the Property
      * @param propertyType is the value of a parameter that is not currently being used
      * @param propertyColourGroup is the colour group of the Property
-     * @param propertyColour is the cost of the Property
+     * @param propertyCost is the cost of the Property
      * @param propertyRent is the rent of the Property
      * @param propertySpace is the space where the Property is located
      */
-    public Board(final String propertyname, final int proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyColour, final int propertyRent, final int propertySpace) {
+    public Board(final String propertyname, final int proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
         super(propertyname, proprtyOwner, propertyType, propertyColourGroup, propertyType, propertyRent, propertySpace);
     }
     /** Assigning initial values to all the Property.
@@ -31,7 +31,7 @@ public class Board extends Property{
         properties.addAll(List.of(
                 new Property("Home", 0, -1, "Green", 0, 0, 0),
                 new Property("Road", 0, 2, "Grey", 0, 20, 1),
-                new Property("Road1", 0, 2, "Grey", 0, 960, 2),
+                new Property("Station1", 0, 1, "Grey", 0, 960, 2),
                 new Property("Old Kent Road", 0, 0, "Orange", 80, 920, 3),
                 new Property("Pall Mall", 0, 0, "Orange", 50, 970, 4),
                 new Property("Road2", 0, 2, "Grey", 0, 0, 5),
@@ -42,11 +42,9 @@ public class Board extends Property{
                 new Property("Tax Office", 0, 3, "Grey", 0, 0, 10),
                 new Property("Waterloo", 0, 0, "Grey", 900, 800, 11),
                 new Property("Leicester Square", 0, 0, "Grey", 0, 769, 12),
-                new Property("Road5", 0, 2, "Grey", 0, 0, 13),
+                new Property("station 2", 0, 3, "Grey", 0, 0, 13),
                 new Property("Park Lane", 0, 0, "Grey", 900, 820, 14),
                 new Property("Road6", 0, 2, "Grey", 0, 0, 15)
                 ));
     }
-
-
 }

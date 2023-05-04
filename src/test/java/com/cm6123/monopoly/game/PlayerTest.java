@@ -124,7 +124,7 @@ class PlayerTest {
     //testing the default constructor with no parameters
     @Test
     public void testDefaultConstructor() {
-        // given a player with no name and piece is initialised
+        // given a player with no name and piece initialised
         Player player = new Player();
         // then the player should have the following attributes
         assertEquals("UNKNOWN", player.getName());
@@ -139,7 +139,7 @@ class PlayerTest {
 
     @Test
     public void testParameterizedConstructorWithTheNameAndPiece() {
-        // given a player with the name and piece is initialised
+        // given a player with the name and piece initialised to John and 1 respectively
         Player player = new Player("John", 1);
         // then the player should have the following attributes
         assertEquals("John", player.getName());
@@ -150,5 +150,32 @@ class PlayerTest {
         assertEquals(0, player.getProperties());
         assertTrue(player.getPropertiesArray().isEmpty());
     }
-
+    @Test
+    public void testBuyPropertyWithEnoughMoney() {
+        // given a property3 with a price of 750
+        Property property3 = new Property("Park Place", 0, 0, "Blue", 750, 35, 3);
+        //and a  new player with 1000
+        Player player = new Player("ken", 4);
+        assertEquals(1000, player.getMoney());
+        // when the player buys the property
+        boolean result = player.buyProperty(property3);
+        // then it should return true
+        assertTrue(result);
+        //and the money of the player to be 250
+        assertEquals(250, player.getMoney());
+    }
+    @Test
+    public void testBuyPropertyWithNotEnoughMoney() {
+        // given a property with a price of 1750
+        Property property3 = new Property("Park Place", 0, 0, "Blue", 1750, 35, 3);
+        //and a player with 1000
+        Player player = new Player("ken", 4);
+        assertEquals(1000, player.getMoney());
+        // when the player buys the property
+        boolean result = player.buyProperty(property3);
+        // then it should return false
+        assertFalse(result);
+        //and the money of the player to remain the same
+        assertEquals(1000, player.getMoney());
+    }
 }

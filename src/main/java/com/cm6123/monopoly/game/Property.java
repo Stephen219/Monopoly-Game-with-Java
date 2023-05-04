@@ -76,7 +76,7 @@ public class Property {
      * @param propertyRent is the rent of the Property
      * @param propertySpace is the space where the Property is located
      */
-    public Property(final String propertyname, final int proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
+    protected Property(final String propertyname, final int proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
         name = propertyname;
         owner = proprtyOwner;
         colourGroup = propertyColourGroup;
@@ -85,7 +85,6 @@ public class Property {
         space = propertySpace;
         type= propertyType;
     }
-
     /**
      * Getting the name of the Property.
      * @return the name of the Property
@@ -96,7 +95,7 @@ public class Property {
 
     /**
      * Getting the index of the Player who owns the Property.
-     * @return the index
+     * @return the index of the owner
      */
     public int getOwner(){
         return owner;
@@ -164,11 +163,7 @@ public class Property {
      */
 
     public boolean isOwned() {
-        if (owner == 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return owner != 0 ? true : false;
     }
     /**
      * Getting the type of the Property.

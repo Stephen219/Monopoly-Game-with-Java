@@ -7,21 +7,25 @@ import java.util.ArrayList;
  */
 public class Player {
     /**
-     * Represents wheelbarrow the piece.
+     * Represents cat  piece.
      */
     public static final int CAT = 0;
     /**
-     * Represents battleship the piece.
+     * Represents battleship piece.
      */
     public static final int BATTLESHIP= 1;
     /**
-     * Represents sack of money the piece.
+     * Represents dog  piece.
      */
     public static final int DOG= 2;
     /**
-     * Represents horse and rider the piece.
+     * Represents car  piece.
      */
     public static final int CAR = 3;
+    /**
+     * represents the hat.
+     */
+    public static final int HAT = 4;
     /**
      *arraylist of properties owned by the player in the game.
      */
@@ -54,6 +58,7 @@ public class Player {
     private int properties;
     /**
      * creating a constructor for a player with no any value.
+     * this is for the default player.
      * this is used to create an unknown player.
      */
     public Player() {
@@ -124,48 +129,48 @@ public class Player {
     }
 
     /**
-     * Getting the doubles  of the Player.
-     * @return the doubles of the Player.
+     * Getting the doubles  of the player.
+     * @return the doubles of the player.
      */
     public int getDoubles() {
         return doubles;
     }
     /**
-     * Can either add or subtract from a Player's amount.
-     *   of money (a positive number adds, a negative subtracts)
+     * * Can either add or subtract from a player's amount of money.
+     * (a positive number adds, a negative subtracts)
      * @param value how much money to add or subtract
      */
     public void setMoney(final int value) {
         money += value;
     }
     /**
-     * Returning the properties of a player.
+     * Returning the number of properties of a player.
      * @return the properties
      */
     public int getProperties() {
         return properties;
     }
     /**
-     * Resets the number of times a Player.
+     * Resets the number of times a player.
      *   has rolled doubles to 0
      */
     public void resetDoubles() {
         doubles = 0;}
     /**
-     * Adds 1 to the number of times the Player has rolled doubles.
+     * Adds 1 to the number of times the player has rolled doubles.
      */
     public void addDoubles() {
         doubles++;}
     /**
-     * geting the space of the Player.
+     * geting the space of the player.
      * @return the space
      */
     public int getSpace() {
         return space;
     }
     /**
-     * Sets the current space of the Player.
-     * @param location the new space of the Player
+     * Sets the current space of the player.
+     * @param location the new space of the player
      */
     public void setSpace(final int location) {
         space = location;
