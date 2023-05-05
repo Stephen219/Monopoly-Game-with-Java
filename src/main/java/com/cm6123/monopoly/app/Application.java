@@ -26,17 +26,37 @@ public final class Application {
     /**
      * Sets the names of the players.
      * @param players the players to set the names for.
-     * @param in the scanner to use to get the INPUTs from the user.
+     * @param scanner the scanner to use to get the INPUTs from the user.
      */
-    public static void setPlayerNames(final ArrayList<Player> players, final Scanner in) {
-        System.out.println(players.size() + " players");
+    public static void setPlayerNames(final ArrayList<Player> players,final Scanner scanner) {
+        int numPlayers;
+        do {
+            System.out.print("Enter the number of players (2-10): ");
+            numPlayers = scanner.nextInt();
+        } while (numPlayers < 2 || numPlayers > 10);
+        scanner.nextLine(); // consume the remaining newline character
 
-        //iterates through all the players and asks for their names from the user(s)
-        for (Player p : players) {
-            System.out.print("Enter a name for " + p.getName() + ": ");
-            p.setName(in.nextLine());
+        for (int i = 0; i < numPlayers; i++) {
+            System.out.print("Enter name for Player " + (i+1) + ": ");
+            String name = scanner.nextLine();
+            Player player = new Player(name);
+            switch (i % 10 + 1) {
+                case 1: player.setPiece(Player.WHEELBARROW); break;
+                case 2: player.setPiece(Player.TRAIN); break;
+                case 3: player.setPiece(Player.BOOT); break;
+                case 4: player.setPiece(Player.CAR); break;
+                case 5: player.setPiece(Player.THIMBLE); break;
+                case 6: player.setPiece(Player.CANNON); break;
+                case 7: player.setPiece(Player.HORSE_AND_RIDER); break;
+                case 8: player.setPiece(Player.IRON); break;
+                case 9: player.setPiece(Player.HAT); break;
+                case 10: player.setPiece(Player.BATTLESHIP); break;
+                default: break;
+            }
+            players.add(player);
         }
     }
+
     /**
      * main entry point.  If args provided, result is displayed and program exists. Otherwise, user is prompted for
      * input.
@@ -50,11 +70,6 @@ public final class Application {
 
         System.out.println("Hello. Welcome to Monopoly.");
         ArrayList<Player> players = new ArrayList<Player>();//creates an arraylist of players
-        Player player1 = new Player("Player 1", Player.DOG);players.add(player1);
-        Player player2 = new Player("Player 2", Player.BATTLESHIP);players.add(player2);
-        Player player3 = new Player("Player 3", Player.CAR);players.add(player3);
-        Player player4 = new Player("Player 4", Player.HAT);players.add(player4);
-        //i can add more players if needed
         setPlayerNames(players, new Scanner(in));
         ArrayList<Property> properties = new ArrayList<Property>();//creates an arraylist of properties
         createProperties(properties);//creates the board with the properties. the class is in the board class.

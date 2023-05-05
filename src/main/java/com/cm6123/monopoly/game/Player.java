@@ -7,6 +7,9 @@ import java.util.ArrayList;
  */
 public class Player {
     /**
+     * below are the pieces that the player can choose from.
+     */
+    /**
      * Represents cat  piece.
      */
     public static final int CAT = 0;
@@ -27,6 +30,38 @@ public class Player {
      */
     public static final int HAT = 4;
     /**
+     * Represents the bo0t.
+     */
+    public static final int BOOT = 5;
+    /**
+     * Represents the iron.
+     */
+    public static final int IRON = 6;
+    /**
+     * Represents the  thimble.
+     */
+    public static final int THIMBLE =7;
+    /**
+     * Represents the train.
+     */
+    public static final int TRAIN = 8;
+    /**
+     * Represents the sack of money.
+     */
+    public static final int SACK_OF_MONEY=9;
+    /**
+     * Represents the horse and rider.
+     */
+    public static final int HORSE_AND_RIDER =9;
+    /**
+     * Represents the cannon.
+     */
+    public static final int WHEELBARROW =10;
+    /**
+     * Represents the cannon.
+     */
+    public static final int CANNON =11;
+    /**
      *arraylist of properties owned by the player in the game.
      */
     private final ArrayList<Property> playerProperties;
@@ -39,7 +74,7 @@ public class Player {
      * Represents the piece.
      */
 
-    private final int  whichPiece;
+    private int  whichPiece;
     /**
      * Represents the space.
      */
@@ -56,6 +91,20 @@ public class Player {
      * Represents the properties.
      */
     private int properties;
+    /**
+     * Creating a standard Player object with a specified name.
+     * @param n is the name of the Player
+     * the other attributes are set to default values
+     */
+    public Player(final String n) {
+        name       = n;
+        whichPiece = 0;
+        space      = 0;
+        money      = 1000;
+        doubles    = 0;
+        properties = 0;
+        this.playerProperties= new ArrayList<Property>();
+    }
     /**
      * creating a constructor for a player with no any value.
      * this is for the default player.
@@ -213,4 +262,13 @@ public class Player {
     public void sellProperty() {
         properties -= 1;
     }
-}
+    /**
+     * Changing a Player's piece.
+     * @param piece the new piece
+     * @see static variables for piece options
+     */
+    public void setPiece(final int piece) {
+        whichPiece = piece;
+    }}
+
+

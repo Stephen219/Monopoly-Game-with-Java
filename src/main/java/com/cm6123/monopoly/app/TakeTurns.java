@@ -21,7 +21,7 @@ public final class TakeTurns {
     /**
      * This is the banker of the game.
      */
-    private static Banker banker = new Banker();
+    private final static Banker banker = new Banker();
     /**
      * This is the main method of the game. with the user interfaces and the game logic.
      * @param player the player
@@ -166,16 +166,5 @@ public final class TakeTurns {
         }
         //e.printStackTrace();
     }
-//        if (players.size() == 1) {//if there is only one player left in the game then thy are the winner
-//            Player winner = players.get(0);
-//            Property[] mProperties = winner.getPropertiesArray().toArray(new Property[0]);
-//            int totalPrices = (int) 0.0; //total price of the properties
-//            for (Property property : mProperties) {
-//                totalPrices += property.getPrice();
-//            }
-//            System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() +"and the following properties: " + winner.getPropertiesArray());
-//            System.out.println("Total prices of properties: " + totalPrices + "hence they has a net worth of £" + (totalPrices + winner.getMoney()));
-//            System.out.println("The game is over.");
-//        }
     }
 }
