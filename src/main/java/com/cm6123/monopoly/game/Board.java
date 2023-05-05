@@ -31,19 +31,19 @@ public class Board extends Property{
         properties.addAll(List.of(
                 new Property("Home", 0, -1, "Green", 0, 0, 0),
                 new Property("Road", 0, 2, "Grey", 0, 20, 1),
-                new Property("Station1", 0, 1, "Grey", 0, 960, 2),
-                new Property("Old Kent Road", 0, 0, "Orange", 80, 920, 3),
-                new Property("Pall Mall", 0, 0, "Orange", 50, 970, 4),
+                new Property("Station1", 0, 1, "Grey", 20, 2960, 2),
+                new Property("Old Kent Road", 0, 0, "Orange", 980, 1920, 3),
+                new Property("Pall Mall", 0, 0, "Orange", 950, 1970, 4),
                 new Property("Road2", 0, 2, "Grey", 0, 0, 5),
-                new Property("Paddington", 0, 0, "Grey", 170, 870, 6),
+                new Property("Paddington", 0, 0, "Grey", 970, 870, 6),
                 new Property("Mayfair", 0, 0, "Grey", 900, 900, 7),
-                new Property("The Strand", 0, 0, "Grey", 660, 770, 8),
-                new Property("Road4", 0, 2, "Grey", 0, 880, 9),
+                new Property("The Strand", 0, 0, "Grey", 960, 770, 8),
+                new Property("Road4", 0, 2, "Grey", 0, 2980, 9),
                 new Property("Tax Office", 0, 3, "Grey", 0, 0, 10),
                 new Property("Waterloo", 0, 0, "Grey", 900, 800, 11),
-                new Property("Leicester Square", 0, 0, "Grey", 0, 769, 12),
+                new Property("Leicester Square", 0, 0, "Grey", 0, 969, 12),
                 new Property("station 2", 0, 3, "Grey", 0, 0, 13),
-                new Property("Park Lane", 0, 0, "Grey", 900, 820, 14),
+                new Property("Park Lane", 0, 0, "Grey", 900, 920, 14),
                 new Property("Road6", 0, 2, "Grey", 0, 0, 15)
                 ));
     }

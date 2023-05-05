@@ -23,7 +23,7 @@ public final class TakeTurns {
      */
     private static Banker banker = new Banker();
     /**
-     * This is the main method of the game.
+     * This is the main method of the game. with the user interfaces and the game logic.
      * @param player the player
      * @param dice the dice
      * @param properties the properties
@@ -38,8 +38,7 @@ public final class TakeTurns {
             int rollTotal = roll1 + roll2;
             int spaceBefore = player.getSpace();//get the space before the roll
         if (spaceBefore + rollTotal > 16) {
-            //bankk give money to player if he pass go
-            banker.setAmount(-200);
+            banker.setAmount(-200);  //bankk give money to player if he pass go
             System.out.println("You have passed go and collected £200");
         }
         // Print the roll result
@@ -165,12 +164,18 @@ public final class TakeTurns {
         } else {
             System.out.println("mmmmmh!!! .An error occurred.Please press enter to continue......");
         }
-        e.printStackTrace();
+        //e.printStackTrace();
     }
-        if (players.size() == 1) {//if there is only one player left in the game then thy are the winner
-            Player winner = players.get(0);
-            System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() +"and the following properties: " + winner.getPropertiesArray());
-            System.out.println("The game is over.");
-        }
+//        if (players.size() == 1) {//if there is only one player left in the game then thy are the winner
+//            Player winner = players.get(0);
+//            Property[] mProperties = winner.getPropertiesArray().toArray(new Property[0]);
+//            int totalPrices = (int) 0.0; //total price of the properties
+//            for (Property property : mProperties) {
+//                totalPrices += property.getPrice();
+//            }
+//            System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() +"and the following properties: " + winner.getPropertiesArray());
+//            System.out.println("Total prices of properties: " + totalPrices + "hence they has a net worth of £" + (totalPrices + winner.getMoney()));
+//            System.out.println("The game is over.");
+//        }
     }
 }

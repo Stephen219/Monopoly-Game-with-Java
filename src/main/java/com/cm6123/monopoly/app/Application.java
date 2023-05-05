@@ -59,13 +59,13 @@ public final class Application {
         ArrayList<Property> properties = new ArrayList<Property>();//creates an arraylist of properties
         createProperties(properties);//creates the board with the properties. the class is in the board class.
 
-        boolean gameOver = false;//sets the game to not be over
+        boolean gameOver = false; // sets the game to not be over
         int counter = 0;
 
         Scanner scanner = new Scanner(System.in);
         Dice dice = new Dice(6);
 
-        do {
+        do { // do-while loop to keep the game going until there is only one player left
             scanner.nextLine();
             takeTurn(players.get(counter), dice, properties, players, scanner);
             scanner.nextLine();
@@ -73,11 +73,22 @@ public final class Application {
             if (counter > players.size() - 1) {
                 counter = 0;
             }
-        } while (!gameOver);
 
-        scanner.close();
+            if (players.size() == 1) { // if there is only one player left in the game then they are the winner
+                Player winner = players.get(0);
+                Property[] mProperties = winner.getPropertiesArray().toArray(new Property[0]);
+                int totalPrices = (int) 0.0; // total price of the properties
+                for (Property property : mProperties) {
+                    totalPrices += property.getPrice();
+                }
+                System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() + " and the following properties: " + winner.getPropertiesArray());
+                System.out.println("Total prices of properties: " + totalPrices + " hence they have a net worth of £" + (totalPrices + winner.getMoney()));
+                System.out.println("The game is over.");
+                gameOver = true; // set gameOver to true to exit the do-while loop
+            }
+        } while (!gameOver); // while gameOver is false, keep looping
 
-
+        scanner.close(); // close the scanner
 
         logger.info("Application closing");
     }
