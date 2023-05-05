@@ -1,7 +1,5 @@
 package com.cm6123.monopoly.game;
-
 import java.util.ArrayList;
-
 /**
  * this is a player class with all the methods and attribute for the player.
  */

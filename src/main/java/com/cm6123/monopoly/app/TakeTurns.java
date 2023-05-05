@@ -38,19 +38,17 @@ public final class TakeTurns {
             int rollTotal = roll1 + roll2;
             int spaceBefore = player.getSpace();//get the space before the roll
         if (spaceBefore + rollTotal > 16) {
-            banker.setAmount(-200);  //bankk give money to player if he pass go
+
             System.out.println("You have passed go and collected £200");
         }
-        // Print the roll result
         System.out.println(player.getName() + " rolls " + roll1 + " and " + roll2 + " for a total of " + rollTotal);
         // Move the player's piece
         player.movePiece(rollTotal);
         int curr = player.getSpace();//get the space after the roll
         System.out.println(properties.get(curr));
         Property property = properties.get(player.getSpace()); //get the property in the current space
-        int money = player.getMoney();//get the money of the player
         System.out.println(player.getName() + " is now in space " + curr);
-        System.out.println(player.getName() + " has £" + money);
+        System.out.println(player.getName() + " has £" + player.getMoney());
         // Check if the player landed on a road
         if (property.getType() == 2) { // road are of type 2
             System.out.println("You have landed on a road." +property.getName()+ " No action is required.");
@@ -83,7 +81,6 @@ public final class TakeTurns {
                         System.out.println(player.getName() + " has purchased " + property.getName() + " for £" + property.getPrice() + "and now has £" + player.getMoney() + " left.");
                         System.out.println("they own "+player.getProperties()+" properties");
                     } else{
-                        // TOD O: 03/05/2023   the player can sell the property.
                         // Player does not have enough money to buy the property
                         System.out.println(player.getName()+ " does not have enough money to buy " + property.getName() +  "since they have £" + player.getMoney() + " left.");
                     }
@@ -93,10 +90,9 @@ public final class TakeTurns {
                 System.out.println(player.getName() + " already owns " + property.getName() + ".");
                 System.out.println("Do you want to sell " + property.getName() + " for " + property.getPrice() + "? (Y/N)");
                 String input = scan.nextLine().toUpperCase();
-                if (input.equals("Y")) {
-                    //player can sell the property they own if they land on it
+                if (input.equals("Y")) {//player can sell the property they own if they land on it
                     banker.setAmount(-property.getPrice());
-                     player.setMoney(property.getPrice());
+                    player.setMoney(property.getPrice());
                     player.sellProperty();
                     property.setOwner(0);
                     System.out.println("Sold " + property.getName() + " for " + property.getPrice() + "they now have £" + player.getMoney() + " left.");
