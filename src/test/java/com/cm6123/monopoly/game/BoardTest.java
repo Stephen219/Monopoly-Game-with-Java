@@ -11,15 +11,14 @@ public class BoardTest {
 
     @Test
     public void testProperties() {
-        // Create an ArrayList of Property objects
+        //given that the board is created
         ArrayList<Property> properties = new ArrayList<>();
-        // Add a Property object to the ArrayList
         Board.createProperties(properties);
-        // given that the board is created the test Check that the ArrayList has 16 elements
+        //then the board should have 16 properties
         assertEquals(16, properties.size());
-        // Check that the first element in the ArrayList has the name "Home"
+        //and the first property should be "Home"
         assertEquals("Home", properties.get(0).getName());
-        // Check that the colour group of the last element in the ArrayList is "Grey"
+       //and the las property colour group should be "Grey"
         assertEquals("Grey", properties.get(15).getColourGroup());
     }
 

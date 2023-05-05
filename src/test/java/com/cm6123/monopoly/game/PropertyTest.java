@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyTest {
     // property variable to be used in the tests
-    Property property = new Property("Park Place", 0, 0, "Blue", 350, 35, 3);
+    Property property = new Property("Park Place", null, 0, "Blue", 350, 35, 3);
 
     @Test
     void testProperty() {
         //getting the name.
         assertEquals("Park Place", property.getName());
         //getting the owner.
-        assertEquals(0, property.getOwner());
+        assertNull( property.getOwner());
         //getting the colour group.
         assertEquals("Blue", property.getColourGroup());
         //getting the cost.
@@ -26,8 +26,8 @@ class PropertyTest {
     }
     @Test
     void testSetOwner() {
-        property.setOwner(1);
-        Assertions.assertEquals(1, property.getOwner());
+        property.setOwner("john");
+        Assertions.assertEquals("john", property.getOwner());
     }
     @Test
     void testgetType(){
@@ -35,8 +35,8 @@ class PropertyTest {
     }
     @Test
     void testIsOwned(){
-        assertEquals(false, property.isOwned());
-        property.setOwner(1);
+        assertFalse( property.isOwned());
+        property.setOwner("john");
         assertTrue(property.isOwned());
     }
     @Test
@@ -45,7 +45,7 @@ class PropertyTest {
         Property property = new Property();
         //then i expect the following default values to be set.
         assertEquals("UNDEFINED", property.getName());
-        assertEquals(0, property.getOwner());
+        assertEquals(null, property.getOwner());
         assertEquals("NONE", property.getColourGroup());
         assertEquals(0, property.getCost());
         assertEquals(0, property.getRent());

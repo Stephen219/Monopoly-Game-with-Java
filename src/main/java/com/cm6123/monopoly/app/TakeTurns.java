@@ -1,10 +1,8 @@
 package com.cm6123.monopoly.app;
-
 import com.cm6123.monopoly.dice.Dice;
 import com.cm6123.monopoly.game.Banker;
 import com.cm6123.monopoly.game.Player;
 import com.cm6123.monopoly.game.Property;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -21,7 +19,7 @@ public final class TakeTurns {
     /**
      * This is the banker of the game.
      */
-    private final static Banker banker = new Banker();
+    private static final Banker BANKER= new Banker();
     /**
      * This is the main method of the game. with the user interfaces and the game logic.
      * @param player the player
@@ -38,7 +36,6 @@ public final class TakeTurns {
             int rollTotal = roll1 + roll2;
             int spaceBefore = player.getSpace();//get the space before the roll
         if (spaceBefore + rollTotal > 16) {
-
             System.out.println("You have passed go and collected £200");
         }
         System.out.println(player.getName() + " rolls " + roll1 + " and " + roll2 + " for a total of " + rollTotal);
@@ -62,12 +59,13 @@ public final class TakeTurns {
                 String answer = scan.next();
                 if (answer.equalsIgnoreCase("Y")) {
                     if (player.buyProperty(property)) {
-                        banker.setAmount(property.getPrice());//banker takes the money from the player
-                        System.out.println("bank has £" + banker.getMoney());
+                        BANKER.setAmount(property.getPrice());//banker takes the money from the player
+                        System.out.println("bank has £" + BANKER.getMoney());
                         int playerIndex = players.indexOf(player);//get the index of the player
-                        property.setOwner(playerIndex); //set the owner of the property
+                        //property.setOwner(playerIndex); //set the owner of the property
+                        property.setOwner(player.getName());
                         //aad the property to the player's arraylist
-                        player.addProperty(property);
+                        //player.addProperty(property);
                         //print the properties owned by the player
                         ArrayList<Property> aProperties = player.getPropertiesArray();
                         System.out.println(player.getName() + " owns the following properties:");
@@ -75,7 +73,7 @@ public final class TakeTurns {
                             System.out.println("None");
                         } else {
                             for (Property aProperty : aProperties) {
-                                System.out.println(aProperty.getName() + " - $" + aProperty.getPrice());
+                                System.out.println(aProperty.getName() + " - £" + aProperty.getPrice());
                             }
                         }
                         System.out.println(player.getName() + " has purchased " + property.getName() + " for £" + property.getPrice() + "and now has £" + player.getMoney() + " left.");
@@ -85,16 +83,16 @@ public final class TakeTurns {
                         System.out.println(player.getName()+ " does not have enough money to buy " + property.getName() +  "since they have £" + player.getMoney() + " left.");
                     }
                 }
-            } else if (property.getOwner() == player.getPiece()) {
+            } else if (property.getOwner() == player.getName()) {
                 // Player already owns the property they can choose to sell it.
                 System.out.println(player.getName() + " already owns " + property.getName() + ".");
                 System.out.println("Do you want to sell " + property.getName() + " for " + property.getPrice() + "? (Y/N)");
                 String input = scan.nextLine().toUpperCase();
                 if (input.equals("Y")) {//player can sell the property they own if they land on it
-                    banker.setAmount(-property.getPrice());
+                    BANKER.setAmount(-property.getPrice());
                     player.setMoney(property.getPrice());
                     player.sellProperty();
-                    property.setOwner(0);
+                    property.setOwner(null);
                     System.out.println("Sold " + property.getName() + " for " + property.getPrice() + "they now have £" + player.getMoney() + " left.");
                 }else if (!input.equals("N")) {
                     throw new InputMismatchException("Invalid input. Please enter Y or N."); //if the player enters an invalid input
@@ -102,8 +100,11 @@ public final class TakeTurns {
             }else {
                 // Property is owned by someone else, player needs to pay rent
                 int rent = property.getRent();
-                Player owner = players.get(property.getOwner());
-                System.out.println(player.getName() + " landed on " + property.getName() + ", which is owned by " + owner.getName() + ".");
+                String propOwner = property.getOwner();
+                System.out.println(propOwner + "is the owner of the property");
+//                Player owner = players.get(property.getOwner());
+                Player owner = players.get(propOwner.indexOf(propOwner));
+                System.out.println(player.getName() + " landed on " + property.getName() + ", which is owned by " + property.getOwner() + ".");
                 System.out.println(player.getName() + " pays £" + rent + " in rent.");
                 player.setMoney(- rent);
                 owner.setMoney(rent);
@@ -114,8 +115,8 @@ public final class TakeTurns {
             System.out.println(player.getName() + " landed on the tax office.");
             if (roll1 == roll2) { //if the player rolls a double he pays a discounted tax
                 int discountedTax = (int) Math.round(0.05 * player.getMoney());
-                banker.setAmount(discountedTax);
-                System.out.println("the banker has £" + banker.getMoney());
+                BANKER.setAmount(discountedTax);
+                System.out.println("the banker has £" + BANKER.getMoney());
                 player.setMoney(- discountedTax);//player pays the discounted tax
                 System.out.println(player.getName() + " rolled a double and paid a discounted tax of £" + discountedTax + ". They now have £" + player.getMoney());
             } else{ //if the player does not roll a double he pays the full tax
@@ -123,8 +124,8 @@ public final class TakeTurns {
                 int moneyToPaye = player.getMoney() - tax;
                 System.out.println("payed " + tax + " in tax);" + "money left " + moneyToPaye);
                 player.setMoney(-tax);
-                banker.setAmount(tax);
-                System.out.println("the banker has £" + banker.getMoney());
+                BANKER.setAmount(tax);
+                System.out.println("the banker has £" + BANKER.getMoney());
                 System.out.println(player.getName() + " did not roll a double and paid £" + tax + " in taxes. They now have £" + player.getMoney());
             }
         }
@@ -133,16 +134,14 @@ public final class TakeTurns {
             int ticketPrice = 10 * rollTotal; //ticket price is 10 times the total of the dice
             System.out.println(player.getName() + " landed on a station and will pay £" + ticketPrice + " to the banker");
             player.setMoney(- ticketPrice);
-            banker.setAmount(ticketPrice);
-            System.out.println("the banker has £" + banker.getMoney());
+            BANKER.setAmount(ticketPrice);
+            System.out.println("the banker has £" + BANKER.getMoney());
             System.out.println(player.getName() + " paid £" + ticketPrice + " and now has £" + player.getMoney());
         }
         // Check if the player rolled doubles
         if (roll1 == roll2) {
             player.addDoubles();
             if (player.getDoubles() == 3) {
-                // Player has rolled doubles three times in a row
-                System.out.println(player.getName() + " rolled doubles three times in a row and goes to the nearest property");
                 player.setSpace(1); // Move the player to the nearest property
                 player.resetDoubles();
             } else {
@@ -153,7 +152,7 @@ public final class TakeTurns {
         } else {
             player.resetDoubles(); // Reset the doubles counter
         }
-        removePlayer(player, players, properties, banker); // Check if the player is bankrupt and remove them from the game if they are
+        removePlayer(player, players, properties, BANKER); // Check if the player is bankrupt and remove them from the game if they are
     }catch (Exception e) { //catches any exception
         if (e instanceof InputMismatchException) {
             System.out.println("Invalid input!!. Please enter a valid input!!.");

@@ -5,9 +5,6 @@ import java.util.ArrayList;
  */
 public class Player {
     /**
-     * below are the pieces that the player can choose from.
-     */
-    /**
      * Represents cat  piece.
      */
     public static final int CAT = 0;
@@ -117,20 +114,7 @@ public class Player {
         properties = 0;
         this.playerProperties= new ArrayList<Property>();
     }
-    /**
-     * This is the constructor of the Player class where the name and the piece are passed.
-     * @param playerName is the name of the player
-     * @param piece is the piece of the player
-     */
-    public Player(final String playerName, final int piece) {
-        name       = playerName;
-        whichPiece = piece;
-        space      = 0;
-        money      = 1000;
-        doubles    = 0;
-        properties = 0;
-        this.playerProperties= new ArrayList<Property>();
-    }
+
     /**
      * this is the method that adds a property to the player.
      * @param property is the property to be added
@@ -234,12 +218,7 @@ public class Player {
         }
     }
     /**
-     * add a property when they buy.
-     */
-     void addProperty() {
-        properties += 1;
-    }/**
-     * this is the method that sells the properties.
+     * this is the method that buys the properties.
      * and subtracts it from the current properties
      * @param prop3 is the property
      * @return true if the player has enough money to buy the property
@@ -247,7 +226,8 @@ public class Player {
     public boolean buyProperty(final Property prop3) {
         if (money >= prop3.getPrice()) {
             money -= prop3.getPrice();
-            addProperty();
+            properties += 1;
+            playerProperties.add(prop3);
             return true;
         }else {
             return false;

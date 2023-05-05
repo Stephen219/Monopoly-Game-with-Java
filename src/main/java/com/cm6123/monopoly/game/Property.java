@@ -30,7 +30,7 @@ public class Property {
     /**
      * Represents the owner of the property.
      */
-    private int owner;
+    private String owner;
     /**
      * Represents the colour group of the property.
      */
@@ -58,7 +58,7 @@ public class Property {
      */
     public Property() {
         name = "UNDEFINED";
-        owner = 0;
+        owner = null;
         colourGroup = "NONE";
         cost = 0;
         rent = 0;
@@ -76,7 +76,7 @@ public class Property {
      * @param propertyRent is the rent of the Property
      * @param propertySpace is the space where the Property is located
      */
-    protected Property(final String propertyname, final int proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
+    protected Property(final String propertyname, final String proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
         name = propertyname;
         owner = proprtyOwner;
         colourGroup = propertyColourGroup;
@@ -97,7 +97,7 @@ public class Property {
      * Getting the index of the Player who owns the Property.
      * @return the index of the owner
      */
-    public int getOwner(){
+    public String getOwner(){
         return owner;
     }
 
@@ -105,7 +105,7 @@ public class Property {
      * Changing the owner of the Proerty.
      * @param o is the index of the new owner
      */
-    public void setOwner(final int o) {
+    public void setOwner(final String o) {
         owner = o;
     }
 
@@ -163,7 +163,7 @@ public class Property {
      */
 
     public boolean isOwned() {
-        return owner != 0 ? true : false;
+        return owner != null ? true : false;
     }
     /**
      * Getting the type of the Property.

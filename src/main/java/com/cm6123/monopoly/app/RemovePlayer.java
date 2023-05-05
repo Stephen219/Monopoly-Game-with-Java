@@ -33,6 +33,7 @@ import java.util.ArrayList;
                 }
                 playerProperties.remove(propertyToSell);
                 properties.add(propertyToSell);
+                propertyToSell.setOwner(null);// set owner to null
                 int amoun = (int) (0.5 * propertyToSell.getPrice()); // sell property for half price
                 banker.setAmount(-amoun);
                 player.setMoney(amoun);
@@ -42,11 +43,10 @@ import java.util.ArrayList;
                 System.out.println(player.getName() + " has repaid their debt and is still can continue with the game.");
             } else {
                 System.out.println(player.getName() + " is bankrupt and out of the game!!!.");
-                players.remove(player);
+                 // remove player from game
             }
         }
         if (players.size() == 1) {
-            // return the winner
             Player winner = players.get(0);
             //System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() +"and the following properties: " + winner.getPropertiesArray());
             return players.get(0);
