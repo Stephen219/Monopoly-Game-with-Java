@@ -2,6 +2,7 @@ package com.cm6123.monopoly.game;
 
 import com.cm6123.monopoly.dice.Dice;
 import org.junit.jupiter.api.Test;
+import org.mockito.internal.matchers.Null;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -103,7 +104,7 @@ class PlayerTest {
         Player player = new Player();
         // then the player should have the following attributes
         assertEquals("UNKNOWN", player.getName());
-        assertEquals(0, player.getPiece());
+        assertEquals(null, player.getPieceName());
         assertEquals(0, player.getSpace());
         assertEquals(1000, player.getMoney());
         assertEquals(0, player.getDoubles());
@@ -118,7 +119,7 @@ class PlayerTest {
         Player player = new Player("John");
         // then the player should have the following attributes
         assertEquals("John", player.getName());
-        assertEquals(0, player.getPiece());
+        assertEquals(null, player.getPieceName());
         assertEquals(0, player.getSpace());
         assertEquals(1000, player.getMoney());
         assertEquals(0, player.getDoubles());

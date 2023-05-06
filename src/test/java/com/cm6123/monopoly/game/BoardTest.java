@@ -18,7 +18,7 @@ public class BoardTest {
         assertEquals(16, properties.size());
         //and the first property should be "Home"
         assertEquals("Home", properties.get(0).getName());
-       //and the las property colour group should be "Grey"
+       //and the last property colour group should be "Grey"
         assertEquals("Grey", properties.get(15).getColourGroup());
     }
 

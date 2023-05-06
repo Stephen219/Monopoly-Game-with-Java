@@ -68,6 +68,10 @@ public final class Application {
     public static void game(){
         ArrayList<Player> players = new ArrayList<Player>();//creates an arraylist of players
         setPlayerNames(players, new Scanner(in));//sets the names of the players
+        for (Player player : players) {// prints out the name and piece of each player
+            System.out.println(player.getName() + " is using the " +  player.getPieceName() + " piece.");
+        }
+        System.out.println("the number of players is: " + players.size());
         ArrayList<Property> properties = new ArrayList<Property>();//creates an arraylist of properties
         createProperties(properties);//creates the board with the properties. the class is in the board class.
         boolean gameOver = false; // sets the game to not be over
@@ -104,8 +108,7 @@ public final class Application {
     public static void main(final String[] args) {
         logger.info("Application Started with args:{}", String.join(",", args));
         System.out.println("Hello. Welcome to Monopoly.");
-        Application game = new Application();
-        game.game();
+        Application.game();
         logger.info("Application closing");
     }
 }
