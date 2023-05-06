@@ -51,7 +51,8 @@ public class Property {
      * Represents the type of the property.
      * either home of type -1, buyable of type 0, station of type 1, road of type 2, or tax office of type 3.
      */
-    private  int type;
+    private int type;
+
     /**
      * Creating a default constructor for the Property class, which sets default values for name, owner, colourGroup, cost,
      * rent, and space. This constructor is used when a Property object is created without any parameters.
@@ -68,13 +69,14 @@ public class Property {
     /**
      * Creating a constructor for the Property class, which sets values for name, owner, colourGroup, cost, rent, and space.
      * This constructor is used when a Property object is created with parameters.
-     * @param propertyname is the name of the Property
-     * @param proprtyOwner is the owner of the Property
-     * @param propertyType is the value of a parameter that is not currently being used
+     *
+     * @param propertyname        is the name of the Property
+     * @param proprtyOwner        is the owner of the Property
+     * @param propertyType        is the value of a parameter that is not currently being used
      * @param propertyColourGroup is the colour group of the Property
-     * @param propertyCost is the cost of the Property
-     * @param propertyRent is the rent of the Property
-     * @param propertySpace is the space where the Property is located
+     * @param propertyCost        is the cost of the Property
+     * @param propertyRent        is the rent of the Property
+     * @param propertySpace       is the space where the Property is located
      */
     protected Property(final String propertyname, final String proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
         name = propertyname;
@@ -83,26 +85,29 @@ public class Property {
         cost = propertyCost;
         rent = propertyRent;
         space = propertySpace;
-        type= propertyType;
+        type = propertyType;
     }
     /**
      * Getting the name of the Property.
+     *
      * @return the name of the Property
      */
-    public String getName(){
+    public String getName() {
         return name;
     }
 
     /**
      * Getting the index of the Player who owns the Property.
+     *
      * @return the index of the owner
      */
-    public String getOwner(){
+    public String getOwner() {
         return owner;
     }
 
     /**
      * Changing the owner of the Proerty.
+     *
      * @param o is the index of the new owner
      */
     public void setOwner(final String o) {
@@ -111,6 +116,7 @@ public class Property {
 
     /**
      * Getting the colour group of the Property.
+     *
      * @return the colour group
      */
     public String getColourGroup() {
@@ -119,6 +125,7 @@ public class Property {
 
     /**
      * Getting the cost of the Property.
+     *
      * @return the cost
      */
     public int getCost() {
@@ -127,13 +134,16 @@ public class Property {
 
     /**
      * Getting the space where the Property is located of the Property.
+     *
      * @return the space
      */
     public int gettingSpace() {
         return space;
     }
+
     /**
      * Returning all relevant values about a Property.
+     *
      * @return the values of a property
      */
     public String toString() {
@@ -142,16 +152,21 @@ public class Property {
                 + "(*)Colour Group = " + colourGroup + "\n"
                 + "(*)Cost = " + cost + "\n"
                 + "(*)Rent = " + rent + "\n"
-                + "(*)Space = " + space;}
+                + "(*)Space = " + space;
+    }
+
     /**
      * Getting the cost of the Property.
+     *
      * @return the cost
      */
     public int getPrice() {
         return cost;
     }
+
     /**
      * Getting the rent of the Property.
+     *
      * @return the rent
      */
     public int getRent() {
@@ -161,7 +176,6 @@ public class Property {
      * Checking if the Property is owned.
      * @return true if the Property is owned, false otherwise
      */
-
     public boolean isOwned() {
         return owner != null ? true : false;
     }
@@ -169,7 +183,7 @@ public class Property {
      * Getting the type of the Property.
      * @return the type
      */
-    public int getType(){
+    public int getType() {
         return type;
     }
 }

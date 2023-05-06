@@ -3,28 +3,34 @@ package com.cm6123.monopoly.game;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Board extends Property{
-    /** An ArrayList of Property objects to which the properties will be added to.
+public class Board extends Property {
+    /**
+     * An ArrayList of Property objects to which the properties will be added to.
      */
     private ArrayList<Property> properties;
+
     /**
      * Constructor for creating a Board object with the given property details using inheritance from.
      * the Property class. The constructor takes the following parameters:
-     * @param propertyname is the name of the Property
-     * @param proprtyOwner is the owner of the Property
-     * @param propertyType is the value of a parameter that is not currently being used
+     *
+     * @param propertyname        is the name of the Property
+     * @param proprtyOwner        is the owner of the Property
+     * @param propertyType        is the value of a parameter that is not currently being used
      * @param propertyColourGroup is the colour group of the Property
-     * @param propertyCost is the cost of the Property
-     * @param propertyRent is the rent of the Property
-     * @param propertySpace is the space where the Property is located
+     * @param propertyCost        is the cost of the Property
+     * @param propertyRent        is the rent of the Property
+     * @param propertySpace       is the space where the Property is located
      */
     public Board(final String propertyname, final String proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
         super(propertyname, proprtyOwner, propertyType, propertyColourGroup, propertyType, propertyRent, propertySpace);
     }
-    /** Assigning initial values to all the Property.
-     *   objects on a Monopoly board and then adds them to an
-     *   ArrayList defined and accessible in the main
-     *   method
+
+    /**
+     * Assigning initial values to all the Property.
+     * objects on a Monopoly board and then adds them to an
+     * ArrayList defined and accessible in the main
+     * method
+     *
      * @param properties an ArrayList of Property objects to which the properties will be added to
      */
     public static void createProperties(final ArrayList<Property> properties) {
@@ -52,6 +58,6 @@ public class Board extends Property{
                 new Property("Oxford Street", null, 0, "Yellow", 300, 30, 20),
                 new Property("Piccadilly", null, 0, "Yellow", 250, 25, 21),
                 new Property(" Marylebone Station", null, 1, "Yellow", 0, 0, 22)
-                ));
+        ));
     }
 }
