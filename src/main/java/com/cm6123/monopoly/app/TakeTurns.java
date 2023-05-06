@@ -41,7 +41,7 @@ public final class TakeTurns {
             int roll2 = dice.roll();
             int rollTotal = roll1 + roll2;
             int spaceBefore = player.getSpace();//get the space before the roll
-            if (spaceBefore + rollTotal >= 16) {
+            if (spaceBefore + rollTotal >= 23) {
                 System.out.println("You have passed go and collected £200");
             }
             System.out.println(player.getName() + " rolls " + roll1 + " and " + roll2 + " for a total of " + rollTotal);

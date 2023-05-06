@@ -29,22 +29,29 @@ public class Board extends Property{
      */
     public static void createProperties(final ArrayList<Property> properties) {
         properties.addAll(List.of(
-                new Property("Home", null, -1, "Green", 0, 0, 0),
-                new Property("Road", null, 2, "Grey", 0, 20, 1),
-                new Property("Station1", null, 1, "Grey", 20, 2960, 2),
-                new Property("Old Kent Road", null, 0, "Orange", 980, 1920, 3),
-                new Property("Pall Mall", null, 0, "Orange", 950, 1970, 4),
+                new Property("Home (go)", null, -1, "Green", 0, 0, 0),
+                new Property("Road", null, 2, "Grey", 0, 0, 1),
+                new Property("King's Cross Station", null, 1, "Grey", 0, 0, 2),
+                new Property("Old Kent", null, 0, "Orange", 160, 16, 3),
+                new Property("Pall Mall", null, 0, "Orange", 140, 14, 4),
                 new Property("Road2", null, 2, "Grey", 0, 0, 5),
-                new Property("Paddington", null, 0, "Grey", 970, 870, 6),
-                new Property("Mayfair", null, 0, "Grey", 900, 900, 7),
-                new Property("The Strand", null, 0, "Grey", 960, 770, 8),
-                new Property("Road4", null, 2, "Grey", 0, 2980, 9),
+                new Property("Paddington", null, 0, "Grey", 350, 35, 6),
+                new Property("Mayfair", null, 0, "Grey", 400, 40, 7),
+                new Property("The Strand", null, 0, "Grey", 220, 22, 8),
+                new Property("Road4", null, 2, "Grey", 0, 0, 9),
                 new Property("Tax Office", null, 3, "Grey", 0, 0, 10),
-                new Property("Waterloo", null, 0, "Grey", 900, 800, 11),
-                new Property("Leicester Square", null, 0, "Grey", 0, 969, 12),
-                new Property("station 2", null, 3, "Grey", 0, 0, 13),
-                new Property("Park Lane", null, 0, "Grey", 900, 920, 14),
-                new Property("Road6", null, 2, "Grey", 0, 0, 15)
+                new Property("Water Works", null, 0, "Grey", 350, 34, 11),
+                new Property("Leicester Square", null, 0, "Grey", 260, 26, 12),
+                new Property("Liverpool Station", null, 1, "Grey", 0, 0, 13),
+                new Property("Park Lane", null, 0, "Grey", 150, 15, 14),
+                new Property("Road6", null, 2, "Grey", 0, 0, 15),
+                new Property("Bond Street", null, 0, "Grey", 200, 20, 16),
+                new Property("Liverpool Street", null, 0, "Grey", 320, 32, 17),
+                new Property("Regent Street", null, 0, "Yellow", 280, 28, 18),
+                new Property("Electric Company", null, 0, "Yellow", 150, 15, 19),
+                new Property("Oxford Street", null, 0, "Yellow", 300, 30, 20),
+                new Property("Piccadilly", null, 0, "Yellow", 250, 25, 21),
+                new Property(" Marylebone Station", null, 1, "Yellow", 0, 0, 22)
                 ));
     }
 }

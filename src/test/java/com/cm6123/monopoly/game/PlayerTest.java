@@ -64,7 +64,8 @@ class PlayerTest {
         // and the player should have 1000
         assertEquals(1000, player.getMoney());
         // given that the same player rolls a ten
-        player.movePiece(10);
+        player.movePiece(12);
+        player.movePiece(5);
         // then the player should be on space 1    that is 7 + 10 -16 meaning they passed go.
         assertEquals(1, player.getSpace());
         // and the player should have 1200 that is 1000 + 200 for passing go.

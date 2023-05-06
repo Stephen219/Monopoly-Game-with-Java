@@ -235,8 +235,8 @@ public class Player {
      */
     public void movePiece(final int rolled) {
         space += rolled;
-        if (space > 15) {
-            space %= 16;
+        if (space > 22) {
+            space %= 23;
             setMoney(200);
         }
     }
