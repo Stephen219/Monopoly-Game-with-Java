@@ -1,15 +1,10 @@
 package com.cm6123.monopoly.game;
 import java.util.ArrayList;
 import java.util.Map;
-
 /**
  * this is a player class with all the methods and attribute for the player.
  */
 public class Player {
-    /**
-     * Represents the number of pieces in the game.
-     * not that essential but i included it anyway.
-     */
     /**
      * Represents cat  piece.
      */
@@ -93,27 +88,33 @@ public class Player {
      */
     private int properties;
     /**
-     * A map containing the names of the Monopoly pieces to be used in the game.
-     * The key is an integer representing the piece, and the value is a string with the piece's name.
+     * Returns the name of the game piece corresponding to the given piece ID.
+     * Uses a Map to associate piece IDs with their respective names.
+     * If the piece ID is not found in the map, returns "Unknown".
+     * @param pieceId the ID of the game piece to retrieve the name for
+     * @return the name of the game piece corresponding to the given ID
      */
-    private static final Map<Integer, String> PIECE_NAMES = Map.of(
-            BATTLESHIP, "Battleship",
-            CANNON, "Cannon",
-            CAR, "Car",
-            HAT, "Hat",
-            BOOT, "Boot",
-            IRON, "Iron",
-            THIMBLE, "Thimble",
-            TRAIN, "Train",
-            HORSE_AND_RIDER, "Horse and Rider",
-            WHEELBARROW, "Wheelbarrow"
-    );
+    private static String getPiece(final int pieceId) {
+        final Map<Integer, String> pieceNames = Map.of(
+                BATTLESHIP, "Battleship",
+                CANNON, "Cannon",
+                CAR, "Car",
+                HAT, "Hat",
+                BOOT, "Boot",
+                IRON, "Iron",
+                THIMBLE, "Thimble",
+                TRAIN, "Train",
+                HORSE_AND_RIDER, "Horse and Rider",
+                WHEELBARROW, "Wheelbarrow"
+        );
+        return pieceNames.getOrDefault(pieceId, "Unknown");
+    }
     /**
      * this is the method that returns the name of the piece of the player.
      * @return the name of the piece
      */
     public String getPieceName() {
-        return PIECE_NAMES.get(whichPiece);
+        return getPiece(whichPiece);
     }
     /**
      * Creating a standard Player object with a specified name.
@@ -269,6 +270,7 @@ public class Player {
      */
     public void setPiece(final int piece) {
         whichPiece = piece;
-    }}
+    }
+}
 
 

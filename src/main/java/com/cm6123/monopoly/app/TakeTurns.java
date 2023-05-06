@@ -41,7 +41,7 @@ public final class TakeTurns {
             int roll2 = dice.roll();
             int rollTotal = roll1 + roll2;
             int spaceBefore = player.getSpace();//get the space before the roll
-            if (spaceBefore + rollTotal > 16) {
+            if (spaceBefore + rollTotal >= 16) {
                 System.out.println("You have passed go and collected £200");
             }
             System.out.println(player.getName() + " rolls " + roll1 + " and " + roll2 + " for a total of " + rollTotal);
@@ -51,8 +51,7 @@ public final class TakeTurns {
             Property property = properties.get(player.getSpace()); //get the property in the current space
             System.out.println(player.getName() + " is now in space " + curr);
             System.out.println(player.getName() + " has £" + player.getMoney());
-            // Check if the player landed on a road
-            if (property.getType() == 2) { // road are of type 2
+            if (property.getType() == 2) { // check if the player landed on a road (type 2)
                 System.out.println("You have landed on a road." + property.getName() + " No action is required.");
             }// Check if the player landed on a buyable and sellable property
             if (property.getType() == 0) { // buyable and sellable properties are of type 0
@@ -95,12 +94,10 @@ public final class TakeTurns {
                     } else if (!input.equals("N")) {
                         throw new InputMismatchException("Invalid input. Please enter Y or N."); //if the player enters an invalid input
                     }
-                } else {
-                    // Property is owned by someone else, player needs to pay rent
+                } else {// Property is owned by someone else, player needs to pay rent
                     int rent = property.getRent();
                     String propOwner = property.getOwner();
-                    System.out.println(propOwner + "is the owner of the property");
-                    //                Player owner = players.get(property.getOwner());
+                    System.out.println(propOwner + "is the owner of the property"); //Player owner = players.get(property.getOwner());
                     Player owner = players.get(propOwner.indexOf(propOwner));
                     System.out.println(player.getName() + " landed on " + property.getName() + ", which is owned by " + property.getOwner() + ".");
                     System.out.println(player.getName() + " pays £" + rent + " in rent.");

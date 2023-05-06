@@ -68,9 +68,7 @@ public final class Application {
     public static void game(){
         ArrayList<Player> players = new ArrayList<Player>();//creates an arraylist of players
         setPlayerNames(players, new Scanner(in));//sets the names of the players
-        for (Player player : players) {// prints out the name and piece of each player
-            System.out.println(player.getName() + " is using the " +  player.getPieceName() + " piece.");
-        }
+        players.forEach(player -> System.out.println(player.getName() + " is using the " +  player.getPieceName() + " piece."));
         System.out.println("the number of players is: " + players.size());
         ArrayList<Property> properties = new ArrayList<Property>();//creates an arraylist of properties
         createProperties(properties);//creates the board with the properties. the class is in the board class.
@@ -93,7 +91,7 @@ public final class Application {
                 for (Property property : mProperties) {
                     totalPrices += property.getPrice();
                 }
-                System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() + " and the following properties: " + winner.getPropertiesArray());
+                System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() + " and  " + winner.getPropertiesArray().size()+ " properties  which are as follows: " + winner.getPropertiesArray());
                 System.out.println("Total prices of properties: " + totalPrices + " hence they have a net worth of £" + (totalPrices + winner.getMoney()));
                 System.out.println("The game is over.");
                 gameOver = true; // set gameOver to true to exit the do-while loop

@@ -3,9 +3,7 @@ package com.cm6123.monopoly.app;
 import com.cm6123.monopoly.game.Banker;
 import com.cm6123.monopoly.game.Player;
 import com.cm6123.monopoly.game.Property;
-
 import java.util.ArrayList;
-
  public final class RemovePlayer {
      private RemovePlayer() {
      }
@@ -54,5 +52,4 @@ import java.util.ArrayList;
             return null;
         }
     }
-
 }

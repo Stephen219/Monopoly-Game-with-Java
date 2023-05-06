@@ -104,7 +104,7 @@ class PlayerTest {
         Player player = new Player();
         // then the player should have the following attributes
         assertEquals("UNKNOWN", player.getName());
-        assertEquals(null, player.getPieceName());
+        assertEquals("Unknown", player.getPieceName());
         assertEquals(0, player.getSpace());
         assertEquals(1000, player.getMoney());
         assertEquals(0, player.getDoubles());
@@ -119,7 +119,7 @@ class PlayerTest {
         Player player = new Player("John");
         // then the player should have the following attributes
         assertEquals("John", player.getName());
-        assertEquals(null, player.getPieceName());
+        assertEquals("Unknown", player.getPieceName());
         assertEquals(0, player.getSpace());
         assertEquals(1000, player.getMoney());
         assertEquals(0, player.getDoubles());
