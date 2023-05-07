@@ -26,7 +26,7 @@ public class Player {
      */
     public static final int HAT = 4;
     /**
-     * Represents the bo0t.
+     * Represents the boot.
      */
     public static final int BOOT = 5;
     /**
@@ -65,7 +65,7 @@ public class Player {
     /**
      * Represents the name.
      */
-    private String name;
+    private final String name;
     /**
      * Represents the piece.
      */
@@ -145,7 +145,6 @@ public class Player {
     public String getPieceName() {
         return getPiece(whichPiece);
     }
-
     /**
      * this is the method that adds a property to the player.
      * @param property is the property to be added
@@ -167,13 +166,6 @@ public class Player {
      */
     public String getName() {
         return name;
-    }
-    /**
-     * Changing the name of the Player.
-     * @param n the new name of the Player
-     */
-    public void setName(final String n) {
-        name = n;
     }
     /**
      * Getting the money  of the Player.

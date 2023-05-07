@@ -18,7 +18,7 @@ class PropertyTest {
         //getting the colour group.
         assertEquals("Blue", property.getColourGroup());
         //getting the cost.
-        assertEquals(350, property.getCost());
+        assertEquals(350, property.getPrice());
         //getting the rent.
         assertEquals(35, property.getRent());
         //getting the space.
@@ -47,7 +47,7 @@ class PropertyTest {
         assertEquals("UNDEFINED", property.getName());
         assertEquals(null, property.getOwner());
         assertEquals("NONE", property.getColourGroup());
-        assertEquals(0, property.getCost());
+        assertEquals(0, property.getPrice());
         assertEquals(0, property.getRent());
         assertEquals(0, property.gettingSpace());
     }

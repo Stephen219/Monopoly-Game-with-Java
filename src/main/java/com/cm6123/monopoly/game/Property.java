@@ -9,23 +9,23 @@ public class Property {
     /**
      * Repreesents the home property type.  can
      */
-    public static final int OTHER = -1;
+    public static final int OTHER = -1;// this is not part of the attributes of the property
     /**
      * Represents the types of properties that can be bought.
      */
-    public static final int PROPERTY = 0;
+    public static final int PROPERTY = 0;// this is not part of the attributes of the property
     /**
      * represents the station properties.
      */
-    public static final int STATION = 1;
+    public static final int STATION = 1;// this is not part of the attributes of the property
     /**
      * represents the road properties.
      */
-    public static final int ROAD = 2;
+    public static final int ROAD = 2;// this is not part of the attributes of the property
     /**
      * represents the tax office property.
      */
-    public static final int TAXOFFICE = 3;
+    public static final int TAXOFFICE = 3; // this is not part of the attributes of the property
     /**
      * Represents the name of the property.
      */
@@ -124,15 +124,6 @@ public class Property {
      */
     public String getColourGroup() {
         return colourGroup;
-    }
-
-    /**
-     * Getting the cost of the Property.
-     *
-     * @return the cost
-     */
-    public int getCost() {
-        return cost;
     }
 
     /**
