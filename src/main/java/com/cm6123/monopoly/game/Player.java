@@ -87,37 +87,9 @@ public class Player {
      * Represents the properties.
      */
     private int properties;
+
     /**
-     * Returns the name of the game piece corresponding to the given piece ID.
-     * Uses a Map to associate piece IDs with their respective names.
-     * If the piece ID is not found in the map, returns "Unknown".
-     * @param pieceId the ID of the game piece to retrieve the name for
-     * @return the name of the game piece corresponding to the given ID
-     */
-    private static String getPiece(final int pieceId) {
-        final Map<Integer, String> pieceNames = Map.of(
-                BATTLESHIP, "Battleship",
-                CANNON, "Cannon",
-                CAR, "Car",
-                HAT, "Hat",
-                BOOT, "Boot",
-                IRON, "Iron",
-                THIMBLE, "Thimble",
-                TRAIN, "Train",
-                HORSE_AND_RIDER, "Horse and Rider",
-                WHEELBARROW, "Wheelbarrow"
-        );
-        return pieceNames.getOrDefault(pieceId, "Unknown");
-    }
-    /**
-     * this is the method that returns the name of the piece of the player.
-     * @return the name of the piece
-     */
-    public String getPieceName() {
-        return getPiece(whichPiece);
-    }
-    /**
-     * Creating a standard Player object with a specified name.
+     * Creating a standard Player object constructor with a specified name.
      * @param n is the name of the Player
      * the other attributes are set to default values
      */
@@ -143,6 +115,35 @@ public class Player {
         doubles    = 0;
         properties = 0;
         this.playerProperties= new ArrayList<Property>();
+    }
+    /**
+     * Returns the name of the game piece corresponding to the given piece number.
+     * Uses a Map to associate piece IDs with their respective names.
+     * If the piece number  is not found in the map, returns "Unknown".
+     * @param pieceId the ID of the game piece to retrieve the name for
+     * @return the name of the game piece corresponding to the given ID
+     */
+    private static String getPiece(final int pieceId) {
+        final Map<Integer, String> pieceNames = Map.of(
+                BATTLESHIP, "Battleship",
+                CANNON, "Cannon",
+                CAR, "Car",
+                HAT, "Hat",
+                BOOT, "Boot",
+                IRON, "Iron",
+                THIMBLE, "Thimble",
+                TRAIN, "Train",
+                HORSE_AND_RIDER, "Horse and Rider",
+                WHEELBARROW, "Wheelbarrow"
+        );
+        return pieceNames.getOrDefault(pieceId, "Unknown");
+    }
+    /**
+     * this is the method that returns the name of the piece of the player.
+     * @return the name of the piece
+     */
+    public String getPieceName() {
+        return getPiece(whichPiece);
     }
 
     /**
@@ -272,5 +273,6 @@ public class Player {
         whichPiece = piece;
     }
 }
+
 
 

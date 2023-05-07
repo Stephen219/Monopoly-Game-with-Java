@@ -9,6 +9,7 @@ import java.util.ArrayList;
      }
     /**
      * This method is used to remove a player from the game if they are bankrupt.
+     * it is later caaled in the take turn method .
      * @param player the player to be removed.
      * @param players the list of players in the game.
      * @param properties the list of properties in the game.
@@ -46,7 +47,6 @@ import java.util.ArrayList;
         }
         if (players.size() == 1) {
             Player winner = players.get(0);
-            //System.out.println("The winner is " + winner.getName() + " with £" + winner.getMoney() +"and the following properties: " + winner.getPropertiesArray());
             return players.get(0);
         } else {
             return null;

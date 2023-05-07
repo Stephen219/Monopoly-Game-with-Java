@@ -1,7 +1,10 @@
 package com.cm6123.monopoly.game;
-/*A Property is used to keepall the information about all the buyable
-properties locations on a monopolyy board. */
-
+/**
+ * This class represents the properties in the game.
+ * The properties are the spaces on the board that can be bought by the players.
+ * The properties are of types: home, buyable, station, road, and tax office.
+ * The properties have a name, owner, colour group, cost, rent, space, and type.
+ */
 public class Property {
     /**
      * Repreesents the home property type.  can

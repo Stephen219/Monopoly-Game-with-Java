@@ -27,7 +27,7 @@ public final class TakeTurns {
 
     /**
      * This is the main method of the game. with the user interfaces and the game logic.
-     *
+     * it enables the players to take turns and play the game and stipulates the actions to be taken when a player lands on a property.
      * @param player     the player
      * @param dice       the dice
      * @param properties the properties
@@ -134,7 +134,7 @@ public final class TakeTurns {
             if (roll1 == roll2) { // Check if the player rolled doubles
                 player.addDoubles();
                 if (player.getDoubles() == 3) {
-                    player.setSpace(1); // Move the player to the nearest property
+                    player.setSpace(1);
                     player.resetDoubles();
                 } else { // Player gets to roll again
                     System.out.println(player.getName() + " rolled doubles and gets to roll again");
