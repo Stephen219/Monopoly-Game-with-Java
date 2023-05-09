@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
     // this is the object that will be used to test the player methods.
+    // it is instantiated here so that it can be used in all the tests
     Player player =new Player("John");
 
     @Test
