@@ -1,5 +1,4 @@
 package com.cm6123.monopoly.game;
-import com.cm6123.monopoly.dice.Dice;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -9,7 +8,6 @@ import java.util.Map;
  */
 
 public class Player {
-    Dice dice = new Dice(6);
     /**
      * Represents cat  piece.
      */

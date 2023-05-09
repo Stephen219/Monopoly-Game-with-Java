@@ -106,7 +106,7 @@ public final class Application {
     public static void main(final String[] args) {
         logger.info("Application Started with args:{}", String.join(",", args));
         System.out.println("Hello. Welcome to Monopoly.");
-        Application.game(); // starts the game
+        Application.game();
         logger.info("Application closing");
     }
 }

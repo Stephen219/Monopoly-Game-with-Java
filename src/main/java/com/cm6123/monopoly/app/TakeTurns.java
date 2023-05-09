@@ -44,7 +44,7 @@ public final class TakeTurns {
             if (spaceBefore + rollTotal >= 23) {
                 System.out.println("You have passed go and collected £200");
             }
-            //System.out.println(player.getName() + " rolls " + roll1 + " and " + roll2 + " for a total of " + rollTotal);
+            System.out.println(player.getName() + " rolls " + roll1 + " and " + roll2 + " for a total of " + rollTotal);
             player.movePiece(rollTotal);//move the player
             int curr = player.getSpace();//get the space after the roll
             System.out.println(properties.get(curr));
