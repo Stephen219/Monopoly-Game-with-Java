@@ -16,7 +16,7 @@ import java.util.ArrayList;
      * @param banker the banker of the game.
      * @return the winner of the game when the player array list has only one player.
      */
-    public static Player removePlayer(final Player player, final ArrayList<Player> players,final ArrayList<Property> properties, final Banker banker) {
+    public static void removePlayer(final Player player, final ArrayList<Player> players,final ArrayList<Property> properties, final Banker banker) {
         if (player.getMoney() < 0 && player.getPropertiesArray().isEmpty()) { // if player is bankrupt and has no properties
             System.out.println(player.getName() + " is bankrupt and out of the game.");
             players.remove(player); // remove player from game
@@ -45,11 +45,11 @@ import java.util.ArrayList;
                  // remove player from game
             }
         }
-        if (players.size() == 1) {
-            Player winner = players.get(0);
-            return players.get(0);
-        } else {
-            return null;
-        }
+//        if (players.size() == 1) {
+//            Player winner = players.get(0);
+//            return players.get(0);
+//        } else {
+//            return null;
+//        }
     }
 }

@@ -1,10 +1,15 @@
 package com.cm6123.monopoly.game;
+import com.cm6123.monopoly.dice.Dice;
+
 import java.util.ArrayList;
 import java.util.Map;
+
 /**
  * this is a player class with all the methods and attribute for the player.
  */
+
 public class Player {
+    Dice dice = new Dice(6);
     /**
      * Represents cat  piece.
      */
@@ -264,6 +269,7 @@ public class Player {
     public void setPiece(final int piece) {
         whichPiece = piece;
     }
+
 }
 
 

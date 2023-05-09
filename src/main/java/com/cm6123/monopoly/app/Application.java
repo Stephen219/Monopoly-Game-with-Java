@@ -21,7 +21,7 @@ public final class Application {
      * @param players the players to set the names for.
      * @param scanner1 the scanner to use to get the INPUTs from the user.
      */
-    public static void setPlayerNames(final ArrayList<Player> players,final Scanner scanner1) {
+    static void setPlayerNames(final ArrayList<Player> players,final Scanner scanner1) {
         int numPlayers;
         Scanner scanner = new Scanner(System.in);
         do { // Loop until the user enters a number between 2 and 10
