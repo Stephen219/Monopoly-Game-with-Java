@@ -101,7 +101,6 @@ public class Property {
 
     /**
      * Getting the index of the Player who owns the Property.
-     *
      * @return the index of the owner
      */
     public String getOwner() {
