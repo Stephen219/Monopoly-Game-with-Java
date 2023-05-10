@@ -87,7 +87,7 @@ public class Player {
      */
     private int doubles;
     /**
-     * Represents the properties.
+     * Represents the number properties.
      */
     private int properties;
 

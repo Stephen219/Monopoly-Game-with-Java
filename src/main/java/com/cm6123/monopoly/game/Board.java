@@ -21,7 +21,7 @@ public class Board extends Property {
      * @param propertyRent        is the rent of the Property
      * @param propertySpace       is the space where the Property is located
      */
-    public Board(final String propertyname, final String proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
+    private Board(final String propertyname, final String proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
         super(propertyname, proprtyOwner, propertyType, propertyColourGroup, propertyType, propertyRent, propertySpace);
     }
 

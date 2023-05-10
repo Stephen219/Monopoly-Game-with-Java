@@ -55,22 +55,22 @@ class PlayerTest {
     // testing the move space even after passing go
     // it also tests whether the player gets the money after passing go.
     void testMoveSpaceEvenafterPassingGo(){
+        Player player2 = new Player("John");
         // given the player is on space 0 that is home and has 1000
-        assertEquals(0, player.getSpace());
-        assertEquals(1000, player.getMoney());
-        // when the player rolls a 7
-        player.movePiece(7);
-        // then the player should be on space 7
-        assertEquals(7, player.getSpace());
+        assertEquals(0, player2.getSpace());
+        assertEquals(1000, player2.getMoney());
+        // when the player rolls a 12 (hence should move ahead 12 spaces)
+        player2.movePiece(12);
+        // then the player should be on space 11
+        assertEquals(12, player2.getSpace());
         // and the player should have 1000
         assertEquals(1000, player.getMoney());
-        // given that the same player rolls a ten
-        player.movePiece(12);
-        player.movePiece(5);
-        // then the player should be on space 1    that is 7 + 10 -16 meaning they passed go.
-        assertEquals(1, player.getSpace());
+        // given that the same player rolls a twelve
+        player2.movePiece(12);
+        // then the player should be on space 1 that is 12+12 meaning they passed go since the board has 23 spaces
+        assertEquals(1, player2.getSpace());
         // and the player should have 1200 that is 1000 + 200 for passing go.
-        assertEquals(1200, player.getMoney());
+        assertEquals(1200, player2.getMoney());
     }
     Property property = new Property("Park Place", null, 0, "Blue", 350, 35, 3);
     Property property2 = new Property("may fair", null, 0, "Blue", 350, 35, 5);
