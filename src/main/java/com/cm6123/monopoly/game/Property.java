@@ -7,7 +7,7 @@ package com.cm6123.monopoly.game;
  */
 public class Property {
     /**
-     * Repreesents the home property type.  can
+     * Repreesents the home property type.  can either be a station, road, or tax office.
      */
     public static final int OTHER = -1;// this is not part of the attributes of the property
     /**
