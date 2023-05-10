@@ -117,8 +117,8 @@ public final class TakeTurns {
                     int tax = (int) Math.round(0.1 * player.getMoney());
                     int moneyToPaye = player.getMoney() - tax;
                     System.out.println("payed " + tax + " in tax);" + "money left " + moneyToPaye);
-                    player.setMoney(-tax);
-                    BANKER.setAmount(tax);
+                    player.setMoney(-tax);//player pays the full tax
+                    BANKER.setAmount(tax);//banker takes the money from the player
                     System.out.println("the banker has £" + BANKER.getMoney());
                     System.out.println(player.getName() + " did not roll a double and paid £" + tax + " in taxes. They now have £" + player.getMoney());
                 }
