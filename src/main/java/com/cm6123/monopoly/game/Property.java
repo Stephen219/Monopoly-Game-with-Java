@@ -109,7 +109,6 @@ public class Property {
 
     /**
      * Changing the owner of the Proerty.
-     *
      * @param o is the index of the new owner
      */
     public void setOwner(final String o) {
