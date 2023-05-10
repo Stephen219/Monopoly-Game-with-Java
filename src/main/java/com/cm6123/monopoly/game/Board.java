@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class  Board extends Property {
-    /*
+    /**
      * An ArrayList of Property objects to which the properties will be added to.
      */
     private ArrayList<Property> properties;
