@@ -9,7 +9,7 @@ public class Banker {
      * This is the constructor of the banker.
      */
     public Banker() {
-        money = 100000;
+        this.money = 100000;
     }
     /**
      * This method is used receive and get  money to the game banker.

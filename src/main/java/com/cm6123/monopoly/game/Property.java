@@ -61,12 +61,12 @@ public class Property {
      * rent, and space. This constructor is used when a Property object is created without any parameters.
      */
     public Property() {
-        name = "UNDEFINED";
-        owner = null;
-        colourGroup = "NONE";
-        cost = 0;
-        rent = 0;
-        space = 0;
+        this.name = "UNDEFINED";
+        this.owner = null;
+        this.colourGroup = "NONE";
+        this.cost = 0;
+        this.rent = 0;
+        this.space = 0;
     }
 
     /**
@@ -82,13 +82,13 @@ public class Property {
      * @param propertySpace       is the space where the Property is located
      */
     protected Property(final String propertyname, final String proprtyOwner, final int propertyType, final String propertyColourGroup, final int propertyCost, final int propertyRent, final int propertySpace) {
-        name = propertyname;
-        owner = proprtyOwner;
-        colourGroup = propertyColourGroup;
-        cost = propertyCost;
-        rent = propertyRent;
-        space = propertySpace;
-        type = propertyType;
+        this.name = propertyname;
+        this.owner = proprtyOwner;
+        this.colourGroup = propertyColourGroup;
+        this.cost = propertyCost;
+        this.rent = propertyRent;
+        this.space = propertySpace;
+        this.type = propertyType;
     }
     /**
      * Getting the name of the Property.

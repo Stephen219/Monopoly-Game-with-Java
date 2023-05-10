@@ -97,12 +97,12 @@ public class Player {
      * the other attributes are set to default values
      */
     public Player(final String n) {
-        name       = n;
-        whichPiece = 0;
-        space      = 0;
-        money      = 1000;
-        doubles    = 0;
-        properties = 0;
+        this.name       = n;
+        this.whichPiece = 0;
+        this.space      = 0;
+        this.money      = 1000;
+        this.doubles    = 0;
+        this.properties = 0;
         this.playerProperties= new ArrayList<Property>();
     }
     /**
@@ -111,12 +111,12 @@ public class Player {
      * this is used to create an unknown player.
      */
     public Player() {
-        name       = new String("UNKNOWN");
-        whichPiece = 0;
-        space      = 0;
-        money      = 1000;
-        doubles    = 0;
-        properties = 0;
+        this.name       = new String("UNKNOWN");
+        this.whichPiece = 0;
+        this.space      = 0;
+        this.money      = 1000;
+        this.doubles    = 0;
+        this.properties = 0;
         this.playerProperties= new ArrayList<Property>();
     }
     /**
