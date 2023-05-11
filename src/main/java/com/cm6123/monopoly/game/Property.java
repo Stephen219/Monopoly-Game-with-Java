@@ -58,7 +58,7 @@ public class Property {
 
     /**
      * Creating a default constructor for the Property class, which sets default values for name, owner, colourGroup, cost,
-     * rent, and space. This constructor is used when a Property object is created without any parameters.
+     * rent, and space. This constructor is used when a Property object is created without any parameters hence default are set.
      */
     public Property() {
         this.name = "UNDEFINED";
