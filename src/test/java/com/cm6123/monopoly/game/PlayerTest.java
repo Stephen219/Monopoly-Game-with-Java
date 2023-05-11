@@ -61,7 +61,7 @@ class PlayerTest {
         assertEquals(1000, player2.getMoney());
         // when the player rolls a 12 (hence should move ahead 12 spaces)
         player2.movePiece(12);
-        // then the player should be on space 11
+        // then the player should be on space 12
         assertEquals(12, player2.getSpace());
         // and the player should have 1000
         assertEquals(1000, player.getMoney());
